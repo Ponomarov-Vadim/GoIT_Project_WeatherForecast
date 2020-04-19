@@ -1,0 +1,32 @@
+@media screen and (max-width:768px) {
+    .five-days-info {
+        margin: 0 auto;
+        max-width: 320px;
+        box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
+        border-radius: 35px;
+        background-color: #102136;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .five-days-info {
+        margin: 0 auto;
+        max-width: 620px;
+        box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
+        border-radius: 35px;
+        background-color: #102136;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 1096px) {
+    .five-days-info {
+        margin: 0 auto;
+        max-width: 1060px;
+        box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
+        border-radius: 35px;
+        background-color: #102136;
+        opacity: 0.8;
+    }
+}
