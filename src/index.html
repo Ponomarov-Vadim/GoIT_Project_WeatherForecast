@@ -1,110 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Forecast</title></head
+  >>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Weather Forecast</title>
-</head>>
+  <body>
+    <!-- PAGE INPUT -->
 
-<body>
-
-  <!-- PAGE INPUT -->
-
-  <div class="search-wrap">
-    <form class="search-wrap__form" action="">
-      <img class="search-wrap__geo-img" src="" alt="">
-      <input class="search-wrap__form-input" type="text" placeholder="Enter the city">
-      <img class="search-wrap__search-img" src="" alt="">
-    </form>
-    <div class="link-wrap">
-      <a class="link-wrap__text" href="">Some city</a>
-      <button class="link-wrap__button">delete</button>
-    </div>
-  </div>
-
-  <!-- PAGE MAIN INFORMATION -->
-
-  <div class="main-information-wrap">
-    <div class="main-city-weather">
-      <img class="main-city-weather__img" src="" alt="">
-      <p class="main-city-weather__city-name">Kyiv</p>
-      <span class="main-city-weather__temperature">20</span>
-      <div class="temperature-difference">
-        <div class="min-temperature">
-          <p class="min-temperature__title">min</p>
-          <p class="min-temperature__value">-5</p>
-        </div>
-        <div class="max-temperature">
-          <p class="max-temperature__title">max</p>
-          <p class="max-temperature__value">-2</p>
-        </div>
+    <div class="search-wrap">
+      <form class="search-wrap__form" action="">
+        <img class="search-wrap__geo-img" src="" alt="" />
+        <input
+          class="search-wrap__form-input"
+          type="text"
+          placeholder="Enter the city"
+        />
+        <img class="search-wrap__search-img" src="" alt="" />
+      </form>
+      <div class="link-wrap">
+        <a class="link-wrap__text" href="">Some city</a>
+        <button class="link-wrap__button">delete</button>
       </div>
     </div>
-    <div class="main-buttons">
-      <button class="main-buttons__button-today">today</button>
-      <button class="main-buttons__button-five-days">5 days</button>
-    </div>
-    <div class="date-time-wrap">
-      <h3 class="date-time-wrap__title">8 Sat</h3>
-      <div class="date-time-wrap__info">
-        <p class="date-time-wrap__info-month">febr</p>
-        <p class="date-time-wrap__info-time">14:17</p>
-        <p class="date-time-wrap__info-sunrise">6:30</p>
-        <p class="date-time-wrap__info-sunset">19:28</p>
-      </div>
-    </div>
-    <div class="quote-wrap">
-      <p class="quote-wrap__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat consequatur dolor
-        accusamus earum iste voluptas. Necessitatibus ratione ducimus a culpa voluptates earum, voluptas iste alias,
-        sint saepe tempora doloribus eligendi?</p>
-      <p class="quote-wrap__author">Филипп Киркоров</p>
-    </div>
-  </div>
 
-  <!-- FIVE DAYS WEATHER BLOCK -->
+    <!-- PAGE MAIN INFORMATION -->
 
-  <div class="five-days-info">
-    <div class="one-day-weather">
-      <h2>Sunday</h2>
-      <h3>08</h3>
-      <img src="" alt="">
-      <div class="temperature-difference">
-        <div class="min-temperature">
-          <p class="min-temperature__title">min</p>
-          <p class="min-temperature__value">-5</p>
-        </div>
-        <div class="max-temperature">
-          <p class="max-temperature__title">max</p>
-          <p class="max-temperature__value">-2</p>
+    <div class="main-information-wrap">
+      <div class="main-city-weather">
+        <img class="main-city-weather__img" src="" alt="" />
+        <p class="main-city-weather__city-name">Kyiv</p>
+        <span class="main-city-weather__temperature">20</span>
+        <div class="temperature-difference">
+          <div class="min-temperature">
+            <p class="min-temperature__title">min</p>
+            <p class="min-temperature__value">-5</p>
+          </div>
+          <div class="max-temperature">
+            <p class="max-temperature__title">max</p>
+            <p class="max-temperature__value">-2</p>
+          </div>
         </div>
       </div>
+      <div class="main-buttons">
+        <button class="main-buttons__button-today">today</button>
+        <button class="main-buttons__button-five-days">5 days</button>
+      </div>
+      <div class="date-container">
+        
+      <div class="date-time-container">
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img
+              class="date-time-wrap__info-img"
+              src="./images/icons/iconWeather.png"
+              alt="show weather"
+            />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">max<span>+3</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img
+              class="date-time-wrap__info-img"
+              src="./images/icons/iconWeather.png"
+              alt="show weather"
+            />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">max<span>+3</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img
+              class="date-time-wrap__info-img"
+              src="./images/icons/iconWeather.png"
+              alt="show weather"
+            />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">max<span>+3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="date-time-arrow">
+        <img class="date-time-arrow-left"
+          src="./images/icons/chevron left/chevron_right-24px.svg"
+          alt="arrow-left"
+        />
+        <img class="date-time-arrow-rigth"
+          src="./images/icons/chevron left/chevron_right-24px.svg"
+          alt="arrow-right"
+        />
+      </div>
+      </div>
+      <div class="quote-wrap">
+        <p class="quote-wrap__text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+          consequatur dolor accusamus earum iste voluptas. Necessitatibus
+          ratione ducimus a culpa voluptates earum, voluptas iste alias, sint
+          saepe tempora doloribus eligendi?
+        </p>
+        <p class="quote-wrap__author">Филипп Киркоров</p>
+      </div>
     </div>
-    <div class="three-hour-weather">
-      <p class="three-hour-weather__time">00:00</p>
-      <img class="three-hour-weather__cloud-img" src="" alt="">
-      <p class="three-hour-weather__value"></p>
-      <div>
-        <img src="" alt="">
-        <p>723</p>
+
+    <!-- FIVE DAYS WEATHER BLOCK -->
+
+    <div class="five-days-info">
+      <div class="one-day-weather">
+        <h2>Sunday</h2>
+        <h3>08</h3>
+        <img src="" alt="" />
+        <div class="temperature-difference">
+          <div class="min-temperature">
+            <p class="min-temperature__title">min</p>
+            <p class="min-temperature__value">-5</p>
+          </div>
+          <div class="max-temperature">
+            <p class="max-temperature__title">max</p>
+            <p class="max-temperature__value">-2</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="" alt="">
-        <p>732</p>
-      </div>
-      <div>
-        <img src="" alt="">
-        <p>728</p>
+      <div class="three-hour-weather">
+        <p class="three-hour-weather__time">00:00</p>
+        <img class="three-hour-weather__cloud-img" src="" alt="" />
+        <p class="three-hour-weather__value"></p>
+        <div>
+          <img src="" alt="" />
+          <p>723</p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <p>732</p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <p>728</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- DIAGRAM BLOCK -->
+    <!-- DIAGRAM BLOCK -->
 
-  <div class="diagram-wrap">
-
-  </div>
-</body>
-
+    <div class="diagram-wrap"></div>
+  </body>
 </html>
