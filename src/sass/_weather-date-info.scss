@@ -1,0 +1,146 @@
+.date {
+  &-container {
+    width: 80%;
+    min-width: 300px;
+    margin: 0 auto;
+    border-radius: 35px;
+    background-color: rgba(16, 33, 54, 0.8);
+  }
+  &-time {
+    &-container {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      min-width: 300px;
+      margin: 0 auto;
+      line-height: 0;
+    }
+    &-arrow {
+      display: flex;
+      justify-content: space-between;
+      width: 15%;
+      min-width: 65px;
+      margin: 0 auto;
+      &-left {
+        transform: rotate(197grad);
+        fill: white;
+      }
+    }
+    &-wrap {
+      margin: 20px 0;
+      text-align: center;
+      &__title {
+        margin: 0 auto;
+        margin-bottom: 18px;
+        color: #ffffff;
+        font-family: Lato;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.36px;
+      }
+      &__title:hover {
+        color: #ff6b08;
+      }
+      &__info-date {
+        color: #ffffff;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.48px;
+        margin: 0 auto;
+        margin-bottom: 13px;
+      }
+      &__info-img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 15px;
+      }
+      &__info-temperature {
+        color: #ffffff;
+        font-family: Lato;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.36px;
+        margin: 0 auto;
+        padding: 0 4px;
+      }
+    }
+  }
+}
+.date-time-wrap__info-temperature > span {
+  display: block;
+  color: #ff6b08;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.48px;
+}
+.info-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.border {
+  border-right: 1px solid #ffffff;
+}
+@media (min-width: 768px) {
+  .date {
+    &-container {
+      width: 80%;
+    }
+    &-time {
+      &-wrap {
+        &__title {
+          font-size: 14px;
+          letter-spacing: 0.42px;
+        }
+        &__info-date {
+          font-size: 18px;
+          letter-spacing: 0.54px;
+        }
+        &__info-temperature {
+          font-size: 14px;
+          letter-spacing: 0.42px;
+        }
+      }
+      &-arrow {
+        display: none;
+      }
+    }
+  }
+  .date-time-wrap__info-temperature > span {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .date {
+    &-container {
+      width: 80%;
+    }
+    &-time {
+      &-wrap {
+        &__title {
+          font-size: 18px;
+          letter-spacing: 0.54px;
+        }
+        &__info-date {
+          font-size: 25px;
+          letter-spacing: 0.75px;
+        }
+        &__info-temperature {
+          font-size: 18px;
+          letter-spacing: 0.54px;
+        }
+      }
+    }
+  }
+  .date-time-wrap__info-temperature > span {
+    font-size: 25px;
+    letter-spacing: 0.75px;
+  }
+}

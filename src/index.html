@@ -7,40 +7,23 @@
     <title>Weather Forecast</title>
   </head>
 
-  <body>
-    <!-- PAGE INPUT -->
+<body>
+  <!-- PAGE INPUT -->
 
-    <div class="search-wrap">
-      <form class="search-wrap__form" action="">
-        <img
-          class="search-wrap__geo-img"
-          src="./images/icons/location/location_searching-24px.svg"
-          alt=""
-        />
-        <input
-          class="search-wrap__form-input"
-          type="text"
-          placeholder="Enter the city"
-        />
-        <img
-          class="search-wrap__star-img"
-          src="./images/icons/star/star_border-24px.svg"
-          alt=""
-        />
-      </form>
-      <div class="link-wrap">
-        <div class="link-wrap__text">
-          <a href="">Some city</a>
-          <button>x</button>
-        </div>
-        <button class="link-wrap__button">
-          <img src="./images/icons/chevron/chevron_right-24px.svg" alt="" />
-        </button>
+  <div class="search-wrap">
+    <form class="search-wrap__form" action="">
+      <img class="search-wrap__geo-img" src="./images/icons/location/location_searching-24px.svg" alt="" />
+      <input class="search-wrap__form-input" type="text" placeholder="Enter the city" />
+      <img class="search-wrap__star-img" src="./images/icons/star/star_border-24px.svg" alt="" />
+    </form>
+    <div class="link-wrap">
+      <div class="link-wrap__text">
+        <a href="">Some city</a>
+        <button>x</button>
       </div>
     </div>
 
     <!-- PAGE MAIN INFORMATION -->
-
     <div class="main-information-wrap">
       <div class="main-city-weather">
         <img class="main-city-weather__img" src="#" alt="" />
@@ -78,7 +61,28 @@
           saepe tempora doloribus eligendi?
         </p>
         <p class="quote-wrap__author">Филипп Киркоров</p>
+      <div class="main-buttons">
+        <button class="main-buttons__button-today">today</button>
+        <button class="main-buttons__button-five-days">5 days</button>
       </div>
+      <div class="date-container">
+      <div class="date-time-container">
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img
+              class="date-time-wrap__info-img"
+              src="./images/icons/iconWeather.png"
+              alt="show weather"
+            />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">max<span>+3</span></p>
+            </div>
+          </div>
     </div>
 
     <!-- FIVE DAYS WEATHER BLOCK -->
@@ -111,7 +115,6 @@
               height="22"
             />
             <p class="more-info__value">-2<span>&deg</span></p>
-
             <div class="more-info__box-value">
               <div class="more-info__box-value-img">
                 <img
