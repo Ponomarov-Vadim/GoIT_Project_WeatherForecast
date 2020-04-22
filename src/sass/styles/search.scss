@@ -1,6 +1,5 @@
-@media screen and (max-width:768px) {
-    .search-wrap {
-        margin: 30px auto 0 auto;
+.search-wrap {
+    margin: 30px auto 0 auto;
         &__form {
             display: flex;
             margin: 0 auto;
@@ -26,10 +25,12 @@
         &__star-img{
             padding: 12px 12px 12px 12px;
             opacity: .54;
+            cursor: pointer;
         }
         &__geo-img{
             padding: 12px 12px 12px 12px;
             opacity: .54;
+            cursor: pointer;
         }
     }
     .link-wrap {
@@ -44,38 +45,46 @@
             background-color: #102136;
             opacity: 0.47;
             & a {
-                padding: 8px 22px 7px 12px;
+                padding: 8px 0 7px 12px;
                 color: #ffffff;
             }
             & button {
-                padding: 8px;
+                padding: 6px 0 5px 8px;
                 color: white;
                 margin-right: 12px;
                 border: none;
                 outline: none;
                 background-color: #102136;
-                // background-image: url(../images/icons/close/close-24px.svg);
+                cursor: pointer;
             }
         }
         &__button {
             margin-top: 13px;
+            width: 26px;
             border: none;
             outline: none;
             border-radius: 25px;
+            cursor: pointer;
             background-color: #f1f1f1;
-            opacity: 0.2;
             & img {
                 margin-top: 4px;
                 color: black;
-            }
-        } 
-    }
+        }
+    } 
 }
 
 @media screen and (min-width: 769px) {
-    
+    .search-wrap__form {
+        width: 506px;
+        &-input{
+            width: 400px;
+            font-size: 18px;
+        }
+    }
+    .link-wrap {
+        width: 506px;
+    }
 }
-
 @media screen and (min-width: 1096px) {
     
 }
