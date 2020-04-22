@@ -27,8 +27,7 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Lato';
 }
 
 div,
@@ -41,33 +40,35 @@ p {
   padding: 38px;
   margin: auto;
   width: 280px;
-  height: 191px;
+  height: auto;
   border-radius: 35px;
   background-color: rgba(0, 0, 0, 0.9);
+
+  &__img {
+    display: block;
+    margin: auto;
+  }
+
+  &__temperature {
+    display: flex;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 22px;
+  }
 }
 
-// .main-city-weather__city-name {
-// }
+.date-time-wrap__title,
+.main-city-weather__city-name {
+  text-align: center;
+}
+
 .main-city-weather__city-name,
 .min-temperature__title,
 .max-temperature__title {
   color: rgba(250, 251, 252, 0.59);
-  font-family: 'Lato';
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
-}
-
-.main-city-weather__img {
-  display: block;
-  margin: auto;
-}
-
-.main-city-weather__temperature {
-  display: flex;
-  color: #ffffff;
-  font-size: 45px;
-  font-weight: 300;
   line-height: 22px;
 }
 
@@ -81,10 +82,10 @@ p {
 .min-temperature,
 .max-temperature {
   width: 50%;
-}
-.min-temperature__value,
-.max-temperature__value {
-  color: #ffffff;
+
+  &__value {
+    color: #ffffff;
+  }
 }
 
 .main-buttons {
@@ -96,6 +97,7 @@ p {
   justify-content: space-between;
   width: 272px;
 }
+
 .main-buttons__button-today,
 .main-buttons__button-five-days {
   width: 126px;
@@ -105,17 +107,98 @@ p {
   border: none;
   cursor: pointer;
   color: #000000;
-  font-family: 'Lato';
   font-size: 14px;
   font-weight: 700;
   line-height: 22px;
+
+  &:focus,
+  &:hover {
+    background-color: rgba(250, 251, 252, 0.59);
+  }
 }
 
 // date and time ================================
 .date-time-wrap {
   width: 280px;
+  height: auto;
   padding: 38px;
   margin: auto;
   border-radius: 35px;
   background-color: rgba(16, 33, 54, 0.59);
+}
+
+.date-time-wrap__title {
+  margin: 0;
+  padding-bottom: 24px;
+  color: #f7f7f7;
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.date-time-wrap {
+  position: relative;
+  margin-bottom: 44px;
+
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 28px;
+    line-height: 22px;
+
+    &-sun {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+
+  &__info-sunset,
+  &__info-sunrise::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 25px;
+    height: 33px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.date-time-wrap__info-sunrise::before {
+  background-image: url(../images/sunrise.png);
+  right: 80px;
+  bottom: 44px;
+}
+
+.date-time-wrap__info-sunset::before {
+  background-image: url(../images/sunset.png);
+  right: 148px;
+  bottom: 44px;
+}
+
+.quote-wrap {
+  text-align: end;
+}
+
+.quote-wrap__text {
+  padding: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.quote-wrap__author {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 0px 20px 65px 0px;
 }
