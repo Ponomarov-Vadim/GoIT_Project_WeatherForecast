@@ -10,30 +10,51 @@ html {
 
 body {
   margin: 0;
-}
-
-.main-information-wrap {
-  align-items: center;
-  background-image: url(../images/backgr.png);
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  font-family: 'Lato';
 }
 
 .link {
   text-decoration: none;
 }
 
-body {
-  font-family: 'Lato';
-}
-
 div,
 p {
   margin: 0;
   padding: 0;
+}
+
+.main-information-wrap {
+  text-align: center;
+  background-image: url(../images/backgr.png);
+  min-width: 360px;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 769px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg-2.png);
+  }
+
+  @media screen and (min-width: 1096px) {
+    padding: 0;
+    background-image: url(../images/Слой_2.png);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.main-city-weather-wrap {
+  @media screen and (min-width: 769px) {
+    text-align: center;
+  }
+  @media screen and (min-width: 1096px) {
+  }
 }
 
 .main-city-weather {
@@ -47,14 +68,25 @@ p {
   &__img {
     display: block;
     margin: auto;
+    padding-bottom: 14px;
   }
 
   &__temperature {
-    display: flex;
     color: #ffffff;
     font-size: 45px;
     font-weight: 300;
-    line-height: 22px;
+
+    @media screen and (min-width: 769px) {
+      font-size: 90px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    width: 490px;
+  }
+
+  @media screen and (min-width: 1096px) {
+    border-radius: 35px 0 0 35px;
   }
 }
 
@@ -69,7 +101,16 @@ p {
   color: rgba(250, 251, 252, 0.59);
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
+
+  @media screen and (min-width: 769px) {
+    font-size: 18px;
+  }
+
+  &__value {
+    @media screen and (min-width: 769px) {
+      font-size: 18px;
+    }
+  }
 }
 
 .temperature-difference {
@@ -109,7 +150,6 @@ p {
   color: #000000;
   font-size: 14px;
   font-weight: 700;
-  line-height: 22px;
 
   &:focus,
   &:hover {
@@ -117,15 +157,7 @@ p {
   }
 }
 
-// date and time ================================
-.date-time-wrap {
-  width: 280px;
-  height: auto;
-  padding: 38px;
-  margin: auto;
-  border-radius: 35px;
-  background-color: rgba(16, 33, 54, 0.59);
-}
+// date time ======================
 
 .date-time-wrap__title {
   margin: 0;
@@ -133,34 +165,52 @@ p {
   color: #f7f7f7;
   font-size: 45px;
   font-weight: 300;
-  line-height: 22px;
+
+  @media screen and (min-width: 769px) {
+    font-size: 90px;
+    font-weight: 300;
+  }
+}
+
+.date-time {
+  padding: 0 25px 65px;
+  @media screen and (min-width: 1096px) {
+    display: flex;
+    align-self: self-start;
+    justify-content: space-between;
+    padding: 0;
+  }
 }
 
 .date-time-wrap {
   position: relative;
-  margin-bottom: 44px;
+  width: 280px;
+  height: auto;
+  padding: 38px;
+  margin: 0 auto 44px auto;
+  border-radius: 35px;
+  background-color: rgba(16, 33, 54, 0.59);
 
   &__info {
+    padding-bottom: 28px;
+  }
+
+  &__info,
+  &__info-sun {
     display: flex;
     justify-content: space-around;
     color: #ffffff;
     font-size: 14px;
     font-weight: 400;
-    padding-bottom: 28px;
     line-height: 22px;
-
-    &-sun {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 22px;
-    }
   }
 
   &__info-sunset,
+  &__info-sunrise {
+    padding-left: 35px;
+  }
+
+  &__info-sunset::before,
   &__info-sunrise::before {
     position: absolute;
     display: block;
@@ -169,36 +219,53 @@ p {
     height: 33px;
     background-size: contain;
     background-repeat: no-repeat;
+    bottom: 44px;
+    background-image: url(../images/sunrise.png);
+    right: 195px;
+  }
+
+  &__info-sunset::before {
+    background-image: url(../images/sunset.png);
+    right: 95px;
+  }
+
+  @media screen and (min-width: 769px) {
+    width: 490px;
+  }
+
+  @media screen and (min-width: 1096px) {
+    width: 601px;
+    margin-bottom: 0;
+    border-radius: 0 35px 0 0;
   }
 }
 
-.date-time-wrap__info-sunrise::before {
-  background-image: url(../images/sunrise.png);
-  right: 80px;
-  bottom: 44px;
-}
-
-.date-time-wrap__info-sunset::before {
-  background-image: url(../images/sunset.png);
-  right: 148px;
-  bottom: 44px;
-}
-
 .quote-wrap {
+  padding: 0 20px 90px;
   text-align: end;
-}
-
-.quote-wrap__text {
-  padding: 20px;
   color: #ffffff;
-  font-size: 14px;
-  line-height: 21px;
-}
 
-.quote-wrap__author {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 32px;
-  padding: 0px 20px 65px 0px;
+  &__text {
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media screen and (min-width: 769px) {
+      font-size: 22px;
+    }
+  }
+
+  &__author {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  @media screen and (min-width: 769px) {
+    padding: 0 20px;
+    width: 375px;
+  }
+
+  @media screen and (min-width: 1096px) {
+  }
 }
