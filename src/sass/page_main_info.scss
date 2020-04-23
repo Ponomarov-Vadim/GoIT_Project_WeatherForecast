@@ -1,0 +1,245 @@
+
+.main-information-wrap {
+    text-align: center;
+    background-image: url(../images/backgr.png);
+    min-width: 360px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    @media screen and (min-width: 769px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../images/bg-2.png);
+    }
+  
+    @media screen and (min-width: 1096px) {
+      padding: 0;
+      background-image: url(../images/Слой_2.png);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  
+  .main-city-weather-wrap {
+    @media screen and (min-width: 769px) {
+      text-align: center;
+    }
+  }
+  
+  .main-city-weather {
+    padding: 38px;
+    margin: auto;
+    width: 280px;
+    height: auto;
+    border-radius: 35px;
+    background-color: rgba(0, 0, 0, 0.9);
+  
+    &__img {
+      display: block;
+      margin: auto;
+      padding-bottom: 14px;
+    }
+  
+    &__temperature {
+      color: #ffffff;
+      font-size: 45px;
+      font-weight: 300;
+  
+      @media screen and (min-width: 769px) {
+        font-size: 90px;
+      }
+    }
+  
+    @media screen and (min-width: 769px) {
+      width: 490px;
+    }
+  
+    @media screen and (min-width: 1096px) {
+      border-radius: 35px 0 0 35px;
+    }
+  }
+  
+  .date-time-wrap__title,
+  .main-city-weather__city-name {
+    text-align: center;
+  }
+  
+  .main-city-weather__city-name,
+  .min-temperature__title,
+  .max-temperature__title {
+    color: rgba(250, 251, 252, 0.59);
+    font-size: 16px;
+    font-weight: 400;
+  
+    @media screen and (min-width: 769px) {
+      font-size: 18px;
+    }
+  
+    &__value {
+      @media screen and (min-width: 769px) {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .temperature-difference {
+    display: flex;
+    margin: auto;
+    width: 76px;
+    height: 32px;
+  }
+  
+  .min-temperature,
+  .max-temperature {
+    width: 50%;
+  
+    &__value {
+      color: #ffffff;
+    }
+  }
+  
+  .main-buttons {
+    padding-top: 32px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 272px;
+  }
+  
+  .main-buttons__button-today,
+  .main-buttons__button-five-days {
+    width: 126px;
+    height: 29px;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+  
+    &:focus,
+    &:hover {
+      background-color: rgba(250, 251, 252, 0.59);
+    }
+  }
+  
+  // date time ======================
+  
+  .date-time-wrap__title {
+    margin: 0;
+    padding-bottom: 24px;
+    color: #f7f7f7;
+    font-size: 45px;
+    font-weight: 300;
+  
+    @media screen and (min-width: 769px) {
+      font-size: 90px;
+      font-weight: 300;
+    }
+  }
+  
+  .date-time {
+    padding: 0 25px 65px;
+    @media screen and (min-width: 1096px) {
+      display: flex;
+      
+      justify-content: space-between;
+      padding: 0;
+    }
+  }
+  
+  .date-time-wrap {
+    position: relative;
+    width: 280px;
+    height: auto;
+    padding: 38px;
+    margin: 0 auto 44px auto;
+    border-radius: 35px;
+    background-color: rgba(16, 33, 54, 0.59);
+  
+    &__info {
+      padding-bottom: 28px;
+    }
+  
+    &__info,
+    &__info-sun {
+      display: flex;
+      justify-content: space-around;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  
+    &__info-sunset,
+    &__info-sunrise {
+      padding-left: 35px;
+    }
+  
+    &__info-sunset::before,
+    &__info-sunrise::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 25px;
+      height: 33px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 44px;
+      background-image: url(../images/sunrise.png);
+      right: 195px;
+    }
+  
+    &__info-sunset::before {
+      background-image: url(../images/sunset.png);
+      right: 95px;
+    }
+  
+    @media screen and (min-width: 769px) {
+      width: 490px;
+    }
+  
+    @media screen and (min-width: 1096px) {
+      width: 601px;
+      margin-bottom: 0;
+      border-radius: 0 35px 0 0;
+    }
+  }
+  
+  .quote-wrap {
+    padding: 0 20px 90px;
+    text-align: end;
+    color: #ffffff;
+  
+    &__text {
+      padding-bottom: 20px;
+      font-size: 14px;
+      line-height: 21px;
+  
+      @media screen and (min-width: 769px) {
+        font-size: 22px;
+      }
+    }
+  
+    &__author {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+  
+    @media screen and (min-width: 769px) {
+      padding: 0 20px;
+      width: 375px;
+    }
+  
+    @media screen and (min-width: 1096px) {
+    }
+  }
