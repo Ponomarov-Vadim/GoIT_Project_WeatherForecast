@@ -8,3 +8,25 @@ html {
   box-sizing: inherit;
 }
 
+
+  body {
+    margin: 0 auto;
+    min-width: 360px;
+    background-image: url(../images/background/mobile_background.png);
+    background-size: cover;
+  }
+
+@media screen and (min-width: 769px) {
+  body {
+    background-image: url(../images/background/tablet_background.png);
+  }
+}
+@media screen and (min-width: 1096px) {
+  body {
+    background-image: url(../images/background/desktop_background.png);
+  }
+}
+
+.diagram {
+  margin-bottom: 36px;
+}
