@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Weather Forecast</title>
 </head>
 
@@ -12,9 +14,13 @@
 
   <div class="search-wrap">
     <form class="search-wrap__form" action="">
-      <img class="search-wrap__geo-img" src="./images/icons/location/location_searching-24px.svg" alt="" />
+      <button class="search-wrap__geo-btn">
+        <img class="search-wrap__geo-img" src="./images/icons/location/location_searching-24px.svg" alt="" />
+      </button>
       <input class="search-wrap__form-input" type="text" placeholder="Enter the city" />
-      <img class="search-wrap__star-img" src="./images/icons/star/star_border-24px.svg" alt="" />
+      <button class="search-wrap__star-btn">
+        <img class="search-wrap__star-img" src="./images/icons/star/star_border-24px.svg" alt="" />
+      </button>
     </form>
     <div class="link-wrap">
       <div class="link-wrap__text">
@@ -29,191 +35,180 @@
     </div>
   </div>
 
-    <!-- PAGE MAIN INFORMATION -->
+  <!-- PAGE MAIN INFORMATION -->
 
-    <div class="main-information-wrap">
-      <div class="main-city-weather-wrap">
-      <div class="main-city-weather">
-        <img
-          class="main-city-weather__img"
-          src="./images/cloud.png"
-          alt="cloud"
-        />
-        <p class="main-city-weather__city-name">Kyiv</p>
-        <span class="main-city-weather__temperature">20</span>
-        <div class="temperature-difference">
+  <div class="main-information-wrap">
+    <div class="main-city-weather">
+      <img class="main-city-weather__img" src="./images/cloud.png" alt="cloud" />
+      <p class="main-city-weather__city-name">Kyiv, UA</p>
+      <div class="temperature-difference">
+        <p class="main-city-weather__temperature">-3</p>
+        <span class="main-degree-icon">&#176</span>
+        <div class="temperature-difference-wrap">
           <div class="min-temperature">
             <p class="min-temperature__title">min</p>
-            <p class="min-temperature__value">-5</p>
+            <p class="min-temperature__value">-5&#176</p>
           </div>
           <div class="max-temperature">
             <p class="max-temperature__title">max</p>
-            <p class="max-temperature__value">-2</p>
+            <p class="max-temperature__value">-2&#176</p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="main-buttons">
+      <button class="main-buttons__button-today">today</button>
+      <button class="main-buttons__button-five-days">5 days</button>
+    </div>
+  </div>
+  <div class="date-quote-wrap">
+    <div class="main-date-wrap">
+      <h3 class="main-date-wrap__title">8 Sat</h3>
+      <div class="main-date-wrap__info">
+        <p class="main-date-wrap__info-month">February</p>
+        <p class="main-date-wrap__info-time">14:17</p>
       </div>
-      <div class="main-buttons">
-        <button class="main-buttons__button-today">today</button>
-        <button class="main-buttons__button-five-days">5 days</button>
+      <div class="main-date-wrap__sun">
+        <img src="./images/sunrise.png" alt="">
+        <p class="main-date-wrap__sun-sunrise">6:30</p>
+        <img src="./images/sunset.png" alt="">
+        <p class="main-date-wrap__sun-sunset">19:28</p>
       </div>
     </div>
-    <div class="date-time">
-      <div class="date-time-wrap">
-        <h3 class="date-time-wrap__title">8 Sat</h3>
-        <div class="date-time-wrap__info">
-          <p class="date-time-wrap__info-month">febr</p>
-          <p class="date-time-wrap__info-time">14:17</p>
-        </div>
-        <div class="date-time-wrap__info-sun">
-          <p class="date-time-wrap__info-sunrise">6:30</p>
-          <p class="date-time-wrap__info-sunset">19:28</p>
-        </div>
-      </div>
-      <div class="quote-wrap">
-        <p class="quote-wrap__text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing. Placeat accusamus
-          earum iste voluptas. Necessitatibus ratione eligendi?
-        </p>
-        <p class="quote-wrap__author">Филипп Киркоров</p>
-      </div>
+    <div class="quote-wrap">
+      <p class="quote-wrap__text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing. Placeat accusamus
+        earum iste voluptas. Necessitatibus ratione eligendi?
+      </p>
+      <p class="quote-wrap__author">Johny Depp</p>
     </div>
-  
-    <!-- FIVE DAYS WEATHER BLOCK -->
+  </div>
 
-    <div class="five-days-info">
-      <div class="date-container">
-        <div class="date-time-container">
-          <div class="date-time-wrap">
-            <h3 class="date-time-wrap__title">Sunday</h3>
-            <div class="date-time-wrap__info">
-              <p class="date-time-wrap__info-date">09 Feb</p>
-              <img
-                class="date-time-wrap__info-img"
-                src="./images/icons/iconWeather.png"
-                alt="show weather"
-              />
-              <div class="info-container">
-                <p class="date-time-wrap__info-temperature border">
-                  min<span>-2</span>
-                </p>
-                <p class="date-time-wrap__info-temperature">
-                  max<span>+3</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="date-time-wrap">
-            <h3 class="date-time-wrap__title">Sunday</h3>
-            <div class="date-time-wrap__info">
-              <p class="date-time-wrap__info-date">09 Feb</p>
-              <img
-                class="date-time-wrap__info-img"
-                src="./images/icons/iconWeather.png"
-                alt="show weather"
-              />
-              <div class="info-container">
-                <p class="date-time-wrap__info-temperature border">
-                  min<span>-2</span>
-                </p>
-                <p class="date-time-wrap__info-temperature">
-                  max<span>+3</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="date-time-wrap">
-            <h3 class="date-time-wrap__title">Sunday</h3>
-            <div class="date-time-wrap__info">
-              <p class="date-time-wrap__info-date">09 Feb</p>
-              <img
-                class="date-time-wrap__info-img"
-                src="./images/icons/iconWeather.png"
-                alt="show weather"
-              />
-              <div class="info-container">
-                <p class="date-time-wrap__info-temperature border">
-                  min<span>-2</span>
-                </p>
-                <p class="date-time-wrap__info-temperature">
-                  max<span>+3</span>
-                </p>
-              </div>
+  <!-- FIVE DAYS WEATHER BLOCK -->
+
+  <div class="five-days-info">
+    <div class="date-container">
+      <div class="date-time-container">
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">
+                max<span>+3</span>
+              </p>
             </div>
           </div>
         </div>
-        <div class="date-time-arrow">
-            <img class="date-time-arrow-left"  src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
-            <img class="date-time-arrow-right" src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">
+                max<span>+3</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="date-time-wrap">
+          <h3 class="date-time-wrap__title">Sunday</h3>
+          <div class="date-time-wrap__info">
+            <p class="date-time-wrap__info-date">09 Feb</p>
+            <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
+            <div class="info-container">
+              <p class="date-time-wrap__info-temperature border">
+                min<span>-2</span>
+              </p>
+              <p class="date-time-wrap__info-temperature">
+                max<span>+3</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="three-hour">
-        <div class="three-hour-weather">
-          <div class="three-hour-weather__more-info">
-            <p class="more-info__time">00:00</p>
-            <img class="more-info__cloud-img" src="./images/5days-more-info/cloud.png" alt="cloud" width="42"
-              height="22" />
-            <p class="more-info__value">-2<span>&deg</span></p>
-            <div class="more-info__box-value">
-              <div class="more-info__box-value-img">
-                <img src="./images/5days-more-info/pressure.png" alt="pressure" width="22" height="20" />
-                <img src="./images/5days-more-info/precipitation.png" alt="precipitation" width="13" height="20" />
-                <img src="./images/5days-more-info/wind.png" alt="wind" width="24" height="20" />
-              </div>
-              <div class="more-info__box-value-text">
-                <span>723 mm</span>
-                <span>54%</span>
-                <span>3.7 ms</span>
-              </div>
+      <div class="date-time-arrow">
+        <img class="date-time-arrow-left"
+          src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
+        <img class="date-time-arrow-right"
+          src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
+      </div>
+    </div>
+    <div class="three-hour">
+      <div class="three-hour-weather">
+        <div class="three-hour-weather__more-info">
+          <p class="more-info__time">00:00</p>
+          <img class="more-info__cloud-img" src="./images/5days-more-info/cloud.png" alt="cloud" width="42"
+            height="22" />
+          <p class="more-info__value">-2<span>&deg</span></p>
+          <div class="more-info__box-value">
+            <div class="more-info__box-value-img">
+              <img src="./images/5days-more-info/pressure.png" alt="pressure" width="22" height="20" />
+              <img src="./images/5days-more-info/precipitation.png" alt="precipitation" width="13" height="20" />
+              <img src="./images/5days-more-info/wind.png" alt="wind" width="24" height="20" />
+            </div>
+            <div class="more-info__box-value-text">
+              <span>723 mm</span>
+              <span>54%</span>
+              <span>3.7 ms</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- DIAGRAM BLOCK -->
+  <!-- DIAGRAM BLOCK -->
 
-    <section class="diagram">
-      <div class="button-holder button-holder--show">
-        <label class="diagram__label">Show Chart</label>
-        <button class="diagram__button--show-chart"></button>
+  <section class="diagram">
+    <div class="button-holder button-holder--show">
+      <label class="diagram__label">Show Chart</label>
+      <button class="diagram__button--show-chart"></button>
+    </div>
+
+    <div class="diagram__wrap">
+      <div class="button-holder button-holder--hide">
+        <label class="diagram__label">Hide Chart</label>
+        <button class="diagram__button--hide-chart"></button>
       </div>
 
-      <div class="diagram__wrap">
-        <div class="button-holder button-holder--hide">
-          <label class="diagram__label">Hide Chart</label>
-          <button class="diagram__button--hide-chart"></button>
+      <div class="diagram__avarage">
+        <span>AVARAGE:</span>
+        <div>
+          <div class="colored-block__orange"></div>
+          <span>- Temperature, C </span>
         </div>
 
-        <div class="diagram__avarage">
-          <span>AVARAGE:</span>
-          <div>
-            <div class="colored-block__orange"></div>
-            <span>- Temperature, C </span>
-          </div>
-
-          <div>
-            <div class="colored-block__blue"></div>
-            <span class="avarage--line-throught">- Humidity, % </span>
-          </div>
-
-          <div>
-            <div class="colored-block__yellow"></div>
-            <span class="avarage--line-throught">- Wind Speed, m/s</span>
-          </div>
-
-          <div>
-            <div class="colored-block__green"></div>
-            <span class="avarage--line-throught">
-              - Atmosphere Pressure, m/m</span>
-          </div>
+        <div>
+          <div class="colored-block__blue"></div>
+          <span class="avarage--line-throught">- Humidity, % </span>
         </div>
 
-        <div class="diagram__chart">
-          <img src="./images/diagram/chart.png" alt="Diagram" />
+        <div>
+          <div class="colored-block__yellow"></div>
+          <span class="avarage--line-throught">- Wind Speed, m/s</span>
+        </div>
+
+        <div>
+          <div class="colored-block__green"></div>
+          <span class="avarage--line-throught">
+            - Atmosphere Pressure, m/m</span>
         </div>
       </div>
-    </section>
+
+      <div class="diagram__chart">
+        <img src="./images/diagram/chart.png" alt="Diagram" />
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
