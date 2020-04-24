@@ -1,0 +1,28 @@
+.five-days-info {
+  margin: 0 auto;
+  min-width: 280px;
+  box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
+  border-radius: 35px;
+  background-color: rgba($color: #102136, $alpha: 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .five-days-info {
+    // max-width: 79.16%;
+    max-width: 280px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .five-days-info {
+    // max-width: 79.16%;
+    max-width: 607px;
+
+  }
+}
+
+@media screen and (min-width: 1096px) {
+  .five-days-info {
+    max-width: 1060px;
+  }
+}
