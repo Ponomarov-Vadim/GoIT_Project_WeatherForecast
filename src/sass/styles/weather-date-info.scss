@@ -11,6 +11,13 @@
       // min-width: 300px;
       margin: 0 auto;
       line-height: 0;
+      overflow-x: hidden;
+      &:hover{
+        cursor: pointer;
+        }
+      // &:hover .date-time-wrap__title {
+      //     color: #ff6b08;
+      // }
     }
     &-arrow {
       display: flex;
@@ -31,6 +38,7 @@
     &-wrap {
       margin: 20px 0;
       text-align: center;
+      min-width: 106px;
       &__title {
         margin: 0 auto;
         margin-bottom: 18px;
@@ -40,9 +48,6 @@
         font-weight: 400;
         line-height: 22px;
         letter-spacing: 0.36px;
-        &:hover {
-          color: #ff6b08;
-        }
       }
       &__info-date {
         color: #ffffff;
@@ -96,6 +101,7 @@
     }
     &-time {
       &-wrap {
+      // min-width: 80px;
         &__title {
           font-size: 14px;
           letter-spacing: 0.42px;
@@ -126,6 +132,7 @@
     }
     &-time {
       &-wrap {
+        // min-width: 106px;
         &__title {
           font-size: 18px;
           letter-spacing: 0.54px;
