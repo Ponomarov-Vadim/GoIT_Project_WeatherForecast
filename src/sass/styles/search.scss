@@ -22,13 +22,28 @@
                 letter-spacing: 0.42px;
             }
         }
-        &__star-img{
+        &__geo-btn {
             padding: 12px 12px 12px 12px;
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 36px;
+
+        }
+
+        &__star-btn {
+            padding: 12px 12px 12px 12px;
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 36px;
+        }
+
+        &__star-img{
             opacity: .54;
             cursor: pointer;
         }
         &__geo-img{
-            padding: 12px 12px 12px 12px;
             opacity: .54;
             cursor: pointer;
         }
