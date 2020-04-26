@@ -1,2 +1,4 @@
 import './sass/styles.scss';
-import './javascript/parseBack';
+import './javascript/responseParser';
+import './javascript/mainPageWeatherInfo';
+import './javascript/main';
