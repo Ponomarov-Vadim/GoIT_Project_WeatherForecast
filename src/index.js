@@ -1,4 +1,9 @@
 import './sass/styles.scss';
+
+import './javascript/responseParser';
+import './javascript/mainPageWeatherInfo';
+import './javascript/main';
+
 import phrases from './phrases';
 import randomNumberSelection from './randomNumberSelection.js';
 import markup from './phrasesTemplate.hbs';
