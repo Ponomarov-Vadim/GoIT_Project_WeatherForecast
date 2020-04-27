@@ -2,6 +2,7 @@ import './sass/styles.scss';
 import phrases from './phrases';
 import randomNumberSelection from './randomNumberSelection.js';
 import markup from './phrasesTemplate.hbs';
+import dateTimeLoader from "./date-time-info/loadDate";
 
 const markupForPhrases = function (markup) {
   const randomPhrases = phrases[randomNumberSelection(0, phrases.length - 1)];
