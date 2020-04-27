@@ -35,10 +35,27 @@ Chart.plugins.register({
 export default function showChart(parseData) {
   const labels = parseData.list.map(item => getFormatDate(item));
   const datasets = {
-    temp: parseData.list.map(item => item.forecast[0].main.temp),
-    humidity: parseData.list.map(item => item.forecast[0].main.humidity),
-    windSpeed: parseData.list.map(item => item.forecast[0].wind.speed),
-    pressure: parseData.list.map(item => item.forecast[0].main.pressure),
+    temp: parseData.list.map(item =>
+      Math.round(
+        item.forecast.reduce((acc, el) => (acc += el.main.temp), 0) /
+          item.forecast.length,
+      ),
+    ),
+    humidity: parseData.list.map(
+      item =>
+        item.forecast.reduce((acc, el) => (acc += el.main.humidity), 0) /
+        item.forecast.length,
+    ),
+    windSpeed: parseData.list.map(
+      item =>
+        item.forecast.reduce((acc, el) => (acc += el.wind.speed), 0) /
+        item.forecast.length,
+    ),
+    pressure: parseData.list.map(
+      item =>
+        item.forecast.reduce((acc, el) => (acc += el.main.pressure), 0) /
+        item.forecast.length,
+    ),
   };
 
   var myChart = new Chart(ctx, {
