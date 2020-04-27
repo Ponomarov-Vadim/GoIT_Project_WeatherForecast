@@ -1,4 +1,3 @@
-// 5 days weather info
 .date {
   &-container {
     margin: 0 auto;
@@ -115,8 +114,8 @@
       }
     }
   }
-  .date-time-wrap__info-temperature > span {
-    padding-right: 12px;
+  .date-time-wrap__info-temperature  {
+    padding-right: 10px;
     font-size: 18px;
     letter-spacing: 0.54px;
   }

@@ -310,32 +310,8 @@
         <button class="diagram__button--hide-chart"></button>
       </div>
 
-      <div class="diagram__avarage">
-        <span>AVARAGE:</span>
-        <div>
-          <div class="colored-block__orange"></div>
-          <span>- Temperature, C </span>
-        </div>
-
-        <div>
-          <div class="colored-block__blue"></div>
-          <span class="avarage--line-throught">- Humidity, % </span>
-        </div>
-
-        <div>
-          <div class="colored-block__yellow"></div>
-          <span class="avarage--line-throught">- Wind Speed, m/s</span>
-        </div>
-
-        <div>
-          <div class="colored-block__green"></div>
-          <span class="avarage--line-throught">
-            - Atmosphere Pressure, m/m</span>
-        </div>
-      </div>
-
-      <div class="diagram__chart">
-        <img src="./images/diagram/chart.png" alt="Diagram" />
+      <div class="diagram__block">
+        <canvas id="myChart" class="diagram__chart"></canvas>
       </div>
     </div>
   </section>
