@@ -39,4 +39,3 @@ function transformSunInfo(sun, timezone) {
     mins.length < 2 ? `0${mins}` : mins
   }`;
 }
-//Для главной странички  /\ /\ /\ /\ /\ /\

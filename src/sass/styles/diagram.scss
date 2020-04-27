@@ -7,34 +7,14 @@
         opacity: 0.8;
     }
 
-    &__avarage {
-        padding-bottom: 34px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__avarage span {
-        font-size: 14px;
-        font-family: "Myriad Pro";
-        color: rgba(255, 255, 255, 0.541);
-        text-align: left;
+    &__block {
+        padding-bottom: 30px;
+        position: relative;
     }
 
     &__chart {
-        overflow-x: scroll;
-        padding-bottom: 30px;
-    }
-
-    &__chart::-webkit-scrollbar {
-        background-color: rgb(255, 255, 255);
-        opacity: 0.2;
-        height: 6px;
-        border-radius: 2px;
-    }
-
-    &__chart::-webkit-scrollbar-thumb {
-        background-color: rgb(255, 107, 8);
-        border-radius: 2px;
+        height: 400px;
+        width: 800px;
     }
 
     &__button--show-chart {
@@ -55,10 +35,6 @@
         vertical-align: super;
     }
 
-    .avarage--line-throught {
-        text-decoration: line-through;
-    }
-
     .button-holder {
         display: block;
         margin: 0 auto;
@@ -72,41 +48,10 @@
             height: 27px;
         }
     }
-
-    .colored-block {
-        &__blue {
-            background-color: rgb(9, 6, 234);
-            @extend %colored-block-size;
-        }
-
-        &__green {
-            background-color: rgb(5, 120, 6);
-            @extend %colored-block-size;
-        }
-
-        &__yellow {
-            background-color: rgb(235, 155, 5);
-            @extend %colored-block-size;
-        }
-
-        &__orange {
-            background-color: rgb(255, 107, 8);
-            @extend %colored-block-size;
-        }
-    }
 }
 
 @media screen and (max-width: 768px) {
     .diagram {
-        &__avarage {
-            flex-direction: column;
-            padding-top: 10px;
-        }
-
-        &__avarage div {
-            display: inline-block;
-        }
-
         &__wrap {
             padding: 24px 16px 28px;
             max-width: 320px;
@@ -120,16 +65,6 @@
 
 @media screen and (min-width: 769px) {
     .diagram {
-        &__avarage {
-            flex-wrap: wrap;
-            flex-direction: row;
-            padding-top: 30px;
-        }
-
-        &__avarage div {
-            display: inline-block;
-        }
-
         &__wrap {
             padding: 28px 30px 40px;
             max-width: 620px;
@@ -143,12 +78,7 @@
 
 @media screen and (min-width: 1096px) {
     .diagram {
-        &__avarage {
-            padding-top: 48px;
-        }
-
-        &__chart {
-            overflow-x: auto;
+        &__block {
             padding-bottom: 0;
         }
 
