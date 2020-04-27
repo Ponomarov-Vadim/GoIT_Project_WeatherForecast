@@ -6,31 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
   <title>Weather Forecast</title>
 </head>
 
   <body>
     <!-- PAGE INPUT -->
-
-  <div class="search-wrap">
-    <form class="search-wrap__form" action="">
-      <button class="search-wrap__geo-btn">
-        <img class="search-wrap__geo-img" src="./images/icons/location/location_searching-24px.svg" alt="" />
-      </button>
-      <input class="search-wrap__form-input" type="text" placeholder="Enter the city" />
-      <button class="search-wrap__star-btn">
-        <img class="search-wrap__star-img" src="./images/icons/star/star_border-24px.svg" alt="" />
-      </button>
-    </form>
-    <div class="link-wrap">
-      <div class="link-wrap__text">
-        <a href="">Some city</a>
-        <button>
-          <img src="./images/icons/close.png" alt="">
-        </button>
+  
+    <div class="search-wrap">
+      <form class="search-wrap__form" action="">
+        <div id="location">
+          <img
+            class="search-wrap__geo-img"
+            src="./images/icons/location/location_searching-24px.svg"
+            alt=""
+          />
+        </div>
+        <input
+          class="search-wrap__form-input"
+          type="text"
+          placeholder="Enter the city"
+        />
+        <div id="star" class="search-wrap__star-img">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path
+              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </form>
+      <div class="link-wrap"></div>
       </div>
-    </div>
-  </div>
   <!-- PAGE MAIN INFORMATION -->
 
   <div class="main-information-wrap">
@@ -314,37 +326,8 @@
         <button class="diagram__button--hide-chart"></button>
       </div>
 
-<<<<<<< HEAD
-      <div class="diagram__avarage">
-        <span>AVARAGE:</span>
-        <div class="diagram__avarage-temperature">
-          <div class="colored-block__orange"></div>
-          <span>- Temperature, C </span>
-        </div>
-
-        <div class="diagram__avarage-humidity">
-          <div class="colored-block__blue"></div>
-          <span class="avarage--line-throught">- Humidity, % </span>
-        </div>
-
-        <div class="diagram__avarage-wind-speed">
-          <div class="colored-block__yellow"></div>
-          <span class="avarage--line-throught">- Wind Speed, m/s</span>
-        </div>
-
-        <div class="diagram__avarage-atmosphere-pressure">
-          <div class="colored-block__green"></div>
-          <span class="avarage--line-throught">
-            - Atmosphere Pressure, m/m</span>
-        </div>
-      </div>
-
-      <div class="diagram__chart">
-        <img src="./images/diagram/chart.png" alt="Diagram" />
-=======
       <div class="diagram__block">
         <canvas id="myChart" class="diagram__chart"></canvas>
->>>>>>> 82da8ba51620edfbe32fec8b2f1e9bdda3e6a299
       </div>
     </div>
   </section>
