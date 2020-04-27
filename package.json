@@ -54,6 +54,7 @@
     "core-js": "^3.6.4",
     "handlebars": "^4.7.3",
     "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "pnotify": "^4.0.1",
     "tiny-slider": "^2.9.2"
   }
