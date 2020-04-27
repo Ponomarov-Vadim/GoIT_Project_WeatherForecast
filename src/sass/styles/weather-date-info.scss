@@ -1,3 +1,9 @@
+.five-days-title {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 34px 0 22px 0;
+}
 .date {
   &-container {
     margin: 0 auto;
@@ -8,10 +14,8 @@
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
-      // min-width: 300px;
       margin: 0 auto;
       line-height: 0;
-      // overflow-x: auto;
       overflow-x: scroll;
       &::-webkit-scrollbar {
         height: 0;
@@ -20,9 +24,6 @@
       &:hover {
         cursor: pointer;
       }
-      // &:hover .date-time-wrap__title {
-      //     color: #ff6b08;
-      // }
     }
     &-arrow {
       display: flex;
@@ -33,11 +34,9 @@
       &-left {
         display: block;
         transform: rotate(200grad);
-        // background-color: #fff;
       }
       &-right {
         display: block;
-        // background-color: #fff;
       }
     }
     &-wrap {
@@ -77,7 +76,6 @@
         line-height: 22px;
         letter-spacing: 0.36px;
         margin: 0 auto;
-        // padding: 0 16px;
       }
       &__info-temperature > span {
         display: block;
@@ -101,9 +99,11 @@
 .border {
   margin: 0 auto;
   border-right: 1px solid #ffffff;
-  // padding-right: 16px;
 }
 @media screen and (min-width: 769px) {
+  .five-days-title {
+    display: none;
+  }
   .info-container {
     max-width: 70px;
   }
@@ -116,11 +116,10 @@
       width: 90%;
     }
     &-time {
-      &-container{
-      overflow-x: inherit;
+      &-container {
+        overflow-x: inherit;
       }
       &-wrap {
-        // min-width: 80px;
         &__title {
           font-size: 14px;
           letter-spacing: 0.42px;
@@ -157,7 +156,6 @@
     }
     &-time {
       &-wrap {
-        // min-width: 106px;
         &__title {
           font-size: 18px;
           letter-spacing: 0.54px;

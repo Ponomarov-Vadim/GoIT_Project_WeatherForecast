@@ -25,15 +25,16 @@ const refsBlock = {
   labelBlock: document.querySelector('.diagram__label'),
   mainBtnBlock: document.querySelector('.main-buttons'),
   showChart: document.querySelector('.button-holder--show'),
-  mainTitle: document.querySelector('h2'),
+  mainTitle: document.querySelector('.main-buttons-title'),
+  fiveDaysTitle: document.querySelector('.five-days-title'),
   sectionDiagram: document.querySelector('.diagram'),
 };
+
 const refsArrow = {
   left: document.querySelector('.date-time-arrow-left'),
   right: document.querySelector('.date-time-arrow-right'),
 };
 
-// const dateTitle = document.querySelectorAll('.date-time-wrap__title')
 
 refsBtn.mainBtnContainer.addEventListener('click', showInfo);
 refsBlock.showChart.addEventListener('click', showChart);
@@ -65,17 +66,19 @@ function showFiveDaysInfo() {
     refsBlock.labelBlock.classList.remove('hidden');
     refsBtn.showChartImg.classList.remove('hidden');
     refsBlock.mainTitle.classList.remove('hidden');
+    refsBlock.fiveDaysTitle.classList.remove('hidden');
     refsBlock.sectionDiagram.classList.remove('hidden');
     refsBlock.mainBtnBlock.style.marginRight = 'auto';
   }
 }
 function showDaysInfo() {
   if (refsFlag.activeDay) {
+    setDefaultColorTitle();
     refsFlag.activeDay = false;
     if (!refsFlag.isActiveChart) {
       hideChart();
     }
-    showThreeHourInfo();
+
     refsBlock.mainCityBlock.classList.remove('hidden');
     refsBlock.quoteBlock.classList.remove('hidden');
     refsBlock.fiveDays.classList.add('hidden');
@@ -86,9 +89,23 @@ function showDaysInfo() {
     refsBtn.fiveDays.style.backgroundColor = '';
     refsBtn.today.style.backgroundColor = '';
     refsBlock.mainTitle.classList.add('hidden');
+    refsBlock.fiveDaysTitle.classList.add('hidden');
     refsBlock.mainBtnBlock.style.marginRight = '';
     refsBlock.sectionDiagram.classList.add('hidden');
   }
+
+  /*--------from showThreeHourInfo--------- */
+  if (refsFlag.isActivThreeHour) {
+    refsFlag.isActivThreeHour = false;
+    refsBlock.hourBlock.classList.add('hidden');
+    return;
+  }
+  setDefaultColorTitle();
+
+  refsFlag.isActivThreeHour = true;
+  refsBlock.hourBlock.classList.remove('hidden');
+
+  /*--------from showThreeHourInfo--------- */
 }
 function showChart() {
   if (refsFlag.isActiveChart) {
@@ -106,17 +123,19 @@ function hideChart() {
     refsBtn.showChartImg.classList.remove('hidden');
   }
 }
+
 function showThreeHourInfo(e) {
-  // console.dir(e.target.closest('.date-time-wrap').children[0])
-  e.target.closest('.date-time-wrap').children[0].style.color = '#ff6b08';
-
   if (refsFlag.isActivThreeHour) {
-
-  e.target.closest('.date-time-wrap').children[0].style.color = '';
-  
+    setDefaultColorTitle();
     refsFlag.isActivThreeHour = false;
     refsBlock.hourBlock.classList.add('hidden');
     return;
+  }
+  setDefaultColorTitle();
+
+  if (e.currentTarget !== e.target) {
+    const parent = findTheParent(e.target);
+    parent.querySelector('.date-time-wrap__title').style.color = '#ff6b08';
   }
   refsFlag.isActivThreeHour = true;
   refsBlock.hourBlock.classList.remove('hidden');
@@ -134,4 +153,18 @@ function showHideCard(e) {
   if (e.target == refsArrow.left) {
     refsBlock.todayTimeContainer.scrollLeft -= valueScroll;
   }
+}
+const wrapper = document.querySelector('.date-time-container');
+
+function findTheParent(child) {
+  return (parent =
+    child.classList[0] !== 'date-time-wrap'
+      ? findTheParent(child.parentNode)
+      : child);
+}
+
+function setDefaultColorTitle() {
+  refsBlock.todayTimeContainer
+    .querySelectorAll('.date-time-wrap__title')
+    .forEach(item => (item.style.color = ''));
 }
