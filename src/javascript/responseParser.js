@@ -1,5 +1,3 @@
-//Для 5 днеаного прогноза \/ \/ \/ \/ \/ \/
-
 export function responseParser(response) {
   const getDate = data => new Date(data.dt * 1000).getUTCDate();
 
