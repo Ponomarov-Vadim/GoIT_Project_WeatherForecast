@@ -6,15 +6,17 @@ const refsFlag = {
   isActivThreeHour: false,
 };
 const refsBtn = {
-  btnToday: document.querySelector('.main-buttons__button-today'),
-  btnFiveDays: document.querySelector('.main-buttons__button-five-days'),
-  btnHideChart: document.querySelector('.button-holder--hide'),
-  btnArrow: document.querySelector('.date-time-arrow'),
+  mainBtnContainer: document.querySelector('.main-buttons-container'),
+  today: document.querySelector('.main-buttons__button-today'),
+  fiveDays: document.querySelector('.main-buttons__button-five-days'),
+  hideChart: document.querySelector('.button-holder--hide'),
+  arrow: document.querySelector('.date-time-arrow'),
+  showChartImg: document.querySelector('.diagram__button--show-chart'),
 };
-console.dir(refsBtn.btnArrow)
+
 const refsBlock = {
-  fiveDaysBlock: document.querySelector('.five-days-info'),
-  todayBlock: document.querySelector('.date-container'),
+  fiveDays: document.querySelector('.five-days-info'),
+  today: document.querySelector('.date-container'),
   todayTimeContainer: document.querySelector('.date-time-container'),
   hourBlock: document.querySelector('.three-hour'),
   diagramBlock: document.querySelector('.diagram__wrap'),
@@ -23,17 +25,30 @@ const refsBlock = {
   labelBlock: document.querySelector('.diagram__label'),
   mainBtnBlock: document.querySelector('.main-buttons'),
   showChart: document.querySelector('.button-holder--show'),
-  mainTitle: document.querySelector("h2"),
-  sectionDiagram: document.querySelector('.diagram')
-  // showThreeHourBlock: document.getElementsByClassName('.date-time-wrap'),
+  mainTitle: document.querySelector('h2'),
+  sectionDiagram: document.querySelector('.diagram'),
+};
+const refsArrow = {
+  left: document.querySelector('.date-time-arrow-left'),
+  right: document.querySelector('.date-time-arrow-right'),
 };
 
-refsBtn.btnFiveDays.addEventListener('click', showFiveDaysInfo);
-refsBtn.btnToday.addEventListener('click', showDaysInfo);
+// const dateTitle = document.querySelectorAll('.date-time-wrap__title')
+
+refsBtn.mainBtnContainer.addEventListener('click', showInfo);
 refsBlock.showChart.addEventListener('click', showChart);
-refsBtn.btnHideChart.addEventListener('click', hideChart);
+refsBtn.hideChart.addEventListener('click', hideChart);
 refsBlock.todayTimeContainer.addEventListener('click', showThreeHourInfo);
-refsBtn.btnArrow.addEventListener('click', showHideCard);
+refsBtn.arrow.addEventListener('click', showHideCard);
+
+function showInfo(e) {
+  if (e.target == refsBtn.today) {
+    showDaysInfo();
+  }
+  if (e.target == refsBtn.fiveDays) {
+    showFiveDaysInfo();
+  }
+}
 
 function showFiveDaysInfo() {
   if (!refsFlag.activeDay) {
@@ -42,19 +57,19 @@ function showFiveDaysInfo() {
     refsBlock.hourBlock.classList.add('hidden');
     refsBlock.mainCityBlock.classList.add('hidden');
     refsBlock.quoteBlock.classList.add('hidden');
-    refsBlock.fiveDaysBlock.classList.remove('hidden');
-    refsBlock.todayBlock.classList.remove('hidden');
+    refsBlock.fiveDays.classList.remove('hidden');
+    refsBlock.today.classList.remove('hidden');
     refsBlock.mainBtnBlock.style.paddingBottom = '32px';
-    refsBtn.btnFiveDays.style.backgroundColor = 'white';
-    refsBtn.btnToday.style.backgroundColor = 'rgba(255, 255, 255, .54)';
+    refsBtn.fiveDays.style.backgroundColor = 'white';
+    refsBtn.today.style.backgroundColor = 'rgba(255, 255, 255, .54)';
     refsBlock.labelBlock.classList.remove('hidden');
+    refsBtn.showChartImg.classList.remove('hidden');
     refsBlock.mainTitle.classList.remove('hidden');
     refsBlock.sectionDiagram.classList.remove('hidden');
     refsBlock.mainBtnBlock.style.marginRight = 'auto';
   }
 }
 function showDaysInfo() {
-  // console.log('click')
   if (refsFlag.activeDay) {
     refsFlag.activeDay = false;
     if (!refsFlag.isActiveChart) {
@@ -63,16 +78,16 @@ function showDaysInfo() {
     showThreeHourInfo();
     refsBlock.mainCityBlock.classList.remove('hidden');
     refsBlock.quoteBlock.classList.remove('hidden');
-    refsBlock.fiveDaysBlock.classList.add('hidden');
-    refsBlock.todayBlock.classList.add('hidden');
+    refsBlock.fiveDays.classList.add('hidden');
+    refsBlock.today.classList.add('hidden');
     refsBlock.mainBtnBlock.style.paddingBottom = '32px';
     refsBlock.labelBlock.classList.add('hidden');
-    refsBtn.btnFiveDays.style.backgroundColor = '';
-    refsBtn.btnToday.style.backgroundColor = '';
+    refsBtn.showChartImg.classList.add('hidden');
+    refsBtn.fiveDays.style.backgroundColor = '';
+    refsBtn.today.style.backgroundColor = '';
     refsBlock.mainTitle.classList.add('hidden');
     refsBlock.mainBtnBlock.style.marginRight = '';
     refsBlock.sectionDiagram.classList.add('hidden');
-
   }
 }
 function showChart() {
@@ -80,6 +95,7 @@ function showChart() {
     refsFlag.isActiveChart = false;
     refsBlock.diagramBlock.classList.remove('hidden');
     refsBlock.labelBlock.classList.add('hidden');
+    refsBtn.showChartImg.classList.add('hidden');
   }
 }
 function hideChart() {
@@ -87,11 +103,17 @@ function hideChart() {
     refsFlag.isActiveChart = true;
     refsBlock.diagramBlock.classList.add('hidden');
     refsBlock.labelBlock.classList.remove('hidden');
+    refsBtn.showChartImg.classList.remove('hidden');
   }
 }
-function showThreeHourInfo() {
-  // console.dir(e.currentTarget);
+function showThreeHourInfo(e) {
+  // console.dir(e.target.closest('.date-time-wrap').children[0])
+  e.target.closest('.date-time-wrap').children[0].style.color = '#ff6b08';
+
   if (refsFlag.isActivThreeHour) {
+
+  e.target.closest('.date-time-wrap').children[0].style.color = '';
+  
     refsFlag.isActivThreeHour = false;
     refsBlock.hourBlock.classList.add('hidden');
     return;
@@ -99,6 +121,17 @@ function showThreeHourInfo() {
   refsFlag.isActivThreeHour = true;
   refsBlock.hourBlock.classList.remove('hidden');
 }
-function showHideCard(e){
-  console.dir(e.target)
+
+function showHideCard(e) {
+  const blockWidth = refsBlock.todayTimeContainer.scrollWidth;
+  const blockLength = refsBlock.todayTimeContainer.children.length;
+  const valueScroll = blockWidth / blockLength;
+
+  if (e.target == refsArrow.right) {
+    refsBlock.todayTimeContainer.scrollLeft += valueScroll;
+  }
+
+  if (e.target == refsArrow.left) {
+    refsBlock.todayTimeContainer.scrollLeft -= valueScroll;
+  }
 }

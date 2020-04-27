@@ -7,14 +7,19 @@
     &-container {
       display: flex;
       flex-wrap: nowrap;
-      justify-content: space-around;
+      justify-content: space-between;
       // min-width: 300px;
       margin: 0 auto;
       line-height: 0;
-      overflow-x: hidden;
-      &:hover{
+      // overflow-x: auto;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 0;
+      }
+
+      &:hover {
         cursor: pointer;
-        }
+      }
       // &:hover .date-time-wrap__title {
       //     color: #ff6b08;
       // }
@@ -28,11 +33,11 @@
       &-left {
         display: block;
         transform: rotate(200grad);
-        background-color: #fff;
+        // background-color: #fff;
       }
       &-right {
         display: block;
-        background-color: #fff;
+        // background-color: #fff;
       }
     }
     &-wrap {
@@ -91,7 +96,7 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   max-width: 70px;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .border {
   margin: 0 auto;
@@ -102,17 +107,20 @@
   .info-container {
     max-width: 70px;
   }
-  
-.border {
-  margin: 0 8px;
-}
+
+  .border {
+    margin: 0 8px;
+  }
   .date {
     &-container {
-      width: 80%;
+      width: 90%;
     }
     &-time {
+      &-container{
+      overflow-x: inherit;
+      }
       &-wrap {
-      // min-width: 80px;
+        // min-width: 80px;
         &__title {
           font-size: 14px;
           letter-spacing: 0.42px;
