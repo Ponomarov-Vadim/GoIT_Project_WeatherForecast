@@ -41,11 +41,13 @@
         width: 110px;
 
         button {
+            border: none;
             border-radius: 50%;
-            background-color: rgb(241, 241, 241);
-            opacity: 0.2;
+            background-color: rgba(241, 241, 241, .2);
+            // opacity: 0.2;
             width: 27px;
             height: 27px;
+            cursor: pointer;
         }
     }
 }

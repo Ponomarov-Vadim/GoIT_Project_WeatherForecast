@@ -1,16 +1,14 @@
-<div class="date-time-wrap">
-    <h3 class="date-time-wrap__title">{{this.weekDay}}</h3>
-    <div class="date-time-wrap__info">
-        <p class="date-time-wrap__info-date">{{this.monthDay}}</p>
-        <img class="date-time-wrap__info-img" src="http://openweathermap.org/img/wn/{{this.icon}}@2x.png"
-            alt="show weather" />
-        <div class="info-container">
-            <p class="date-time-wrap__info-temperature border">
-                min<span>{{this.minTemp}}&#176</span>
-            </p>
-            <p class="date-time-wrap__info-temperature">
-                max<span>{{this.maxTemp}}&#176</span>
-            </p>
-        </div>
+<h3 class="date-time-wrap__title">{{this.weekDay}}</h3>
+<div class="date-time-wrap__info">
+    <p class="date-time-wrap__info-date">{{this.monthDay}}</p>
+    <img class="date-time-wrap__info-img" src="http://openweathermap.org/img/wn/{{this.icon}}@2x.png"
+        alt="show weather" />
+    <div class="info-container">
+        <p class="date-time-wrap__info-temperature">
+            min<span>{{this.minTemp}}&#176</span>
+        </p>
+        <p class="date-time-wrap__info-temperature">
+            max<span>{{this.maxTemp}}&#176</span>
+        </p>
     </div>
 </div>
