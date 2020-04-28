@@ -3,7 +3,6 @@ import moment from 'moment';
 
 export default function getThreeHoursWeatherThirdDay ( parseData ) {
     document.querySelector( `.three-hour-weather` ).innerHTML = ``;
-
     const time = parseData.list.map( el => el.forecast.map( elem => elem.dt ) );
     const t = time[4].map( el => moment.unix( el ).format( 'HH:mm' ) );
     const threeHoursDiv = document.querySelector( `.three-hour-weather` );

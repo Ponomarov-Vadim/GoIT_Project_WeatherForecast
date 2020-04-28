@@ -19,8 +19,11 @@ export default function getFivaDaysWeather ( parseData ) {
     const minArr = temp.map( el => el.map( elem => Math.round( elem.temp_min ) ) );
     const sortMin = minArr.map( el => el.sort( ( a, b ) => a - b ) );
     const minTemp = sortMin.map( el => el.shift() );
+
+    const arr = parseData.list;
+    arr.length = 5;
     // Render template
-    const markup = parseData.list.reduce( ( acc, el, index ) => acc + `<div class="date-time-wrap">${five_days_weather( { el, weekDay: weekDay[index], monthDay: monthDay[index], icon: icon[index], maxTemp: maxTemp[index], minTemp: minTemp[index] } )}</div>`, `` );
+    const markup = arr.reduce( ( acc, el, index ) => acc + `<div class="date-time-wrap">${five_days_weather( { el, weekDay: weekDay[index], monthDay: monthDay[index], icon: icon[index], maxTemp: maxTemp[index], minTemp: minTemp[index] } )}</div>`, `` );
     fiveDaysWeather.insertAdjacentHTML( `beforeend`, markup );
 }
 
