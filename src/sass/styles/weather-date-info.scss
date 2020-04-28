@@ -1,3 +1,9 @@
+.five-days-title {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 34px 0 22px 0;
+}
 .date {
   &-container {
     margin: 0 auto;
@@ -7,10 +13,17 @@
     &-container {
       display: flex;
       flex-wrap: nowrap;
-      justify-content: space-around;
-      // min-width: 300px;
+      justify-content: space-between;
       margin: 0 auto;
       line-height: 0;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
     &-arrow {
       display: flex;
@@ -21,16 +34,15 @@
       &-left {
         display: block;
         transform: rotate(200grad);
-        background-color: #fff;
       }
       &-right {
         display: block;
-        background-color: #fff;
       }
     }
     &-wrap {
       margin: 20px 0;
       text-align: center;
+      min-width: 106px;
       &__title {
         margin: 0 auto;
         margin-bottom: 18px;
@@ -40,9 +52,6 @@
         font-weight: 400;
         line-height: 22px;
         letter-spacing: 0.36px;
-        &:hover {
-          color: #ff6b08;
-        }
       }
       &__info-date {
         color: #ffffff;
@@ -67,7 +76,6 @@
         line-height: 22px;
         letter-spacing: 0.36px;
         margin: 0 auto;
-        padding: 0 4px;
       }
       &__info-temperature > span {
         display: block;
@@ -85,16 +93,32 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  max-width: 70px;
+  margin: 0 auto;
 }
 .border {
+  margin: 0 auto;
   border-right: 1px solid #ffffff;
 }
 @media screen and (min-width: 769px) {
+  .five-days-title {
+    display: none;
+  }
+  .info-container {
+    max-width: 70px;
+  }
+
+  .border {
+    margin: 0 8px;
+  }
   .date {
     &-container {
-      width: 80%;
+      width: 90%;
     }
     &-time {
+      &-container {
+        overflow-x: inherit;
+      }
       &-wrap {
         &__title {
           font-size: 14px;
@@ -121,6 +145,12 @@
   }
 }
 @media screen and (min-width: 1096px) {
+  .info-container {
+    max-width: 100px;
+  }
+  .border {
+    margin: 0 12px;
+  }
   .date {
     &-container {
       width: 80%;

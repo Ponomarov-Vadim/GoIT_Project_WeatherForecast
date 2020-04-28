@@ -2,6 +2,7 @@ import axios from 'axios';
 import { responseParser } from '../base/responseParser';
 import mainPageWeatherInfo from '../base/mainPageWeatherInfo';
 import getFiveDateWeather from '../base/five_days_weather';
+import getWeather from '../base/three_hours_weather';
 
 const appid = 'e8208d2596ef2ec6abe477b7469a394e';
 import showChart from './diagram';

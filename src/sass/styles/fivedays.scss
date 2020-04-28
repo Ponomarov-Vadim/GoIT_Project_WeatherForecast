@@ -5,6 +5,12 @@
   border-radius: 35px;
   background-color: rgba($color: #102136, $alpha: 0.8);
 }
+.five-days-title {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 34px 0 22px 0;
+}
 
 @media screen and (max-width: 768px) {
   .five-days-info {
@@ -17,6 +23,10 @@
   .five-days-info {
     // max-width: 79.16%;
     max-width: 620px;
+  }
+
+  .five-days-title {
+    display: none;
   }
 }
 
