@@ -52,8 +52,11 @@
       </div>
     </div>
     <div class="main-buttons">
-      <button class="main-buttons__button-today">today</button>
-      <button class="main-buttons__button-five-days">5 days</button>
+      <h2 class="main-buttons-title hidden">Kyiv, UA</h2>
+      <div class="main-buttons-container">
+        <button class="main-buttons__button-today">today</button>
+        <button class="main-buttons__button-five-days">5 days</button>
+      </div>
     </div>
   </div>
   <div class="date-quote-wrap">
@@ -76,8 +79,10 @@
 
   <!-- FIVE DAYS WEATHER BLOCK -->
 
-  <div class="five-days-info">
-    <div class="date-container">
+  <div class="five-days-info hidden">
+    
+    <h2 class="five-days-title hidden">Kyiv, UA</h2>
+    <div class="date-container hidden">
       <div class="date-time-container">
         <!-- <div class="date-time-wrap">
           <h3 class="date-time-wrap__title">Sunday</h3>
@@ -85,9 +90,11 @@
             <p class="date-time-wrap__info-date">09 Feb</p>
             <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
             <div class="info-container">
-              <p class="date-time-wrap__info-temperature border">
+              <p class="date-time-wrap__info-temperature">
                 min<span>-2</span>
               </p>
+              
+              <div class="border"></div>  
               <p class="date-time-wrap__info-temperature">
                 max<span>+3</span>
               </p>
@@ -100,9 +107,11 @@
             <p class="date-time-wrap__info-date">09 Feb</p>
             <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
             <div class="info-container">
-              <p class="date-time-wrap__info-temperature border">
+              <p class="date-time-wrap__info-temperature">
                 min<span>-2</span>
               </p>
+              
+              <div class="border"></div>  
               <p class="date-time-wrap__info-temperature">
                 max<span>+3</span>
               </p>
@@ -115,9 +124,11 @@
             <p class="date-time-wrap__info-date">09 Feb</p>
             <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
             <div class="info-container">
-              <p class="date-time-wrap__info-temperature border">
+              <p class="date-time-wrap__info-temperature">
                 min<span>-2</span>
               </p>
+              
+              <div class="border"></div>  
               <p class="date-time-wrap__info-temperature">
                 max<span>+3</span>
               </p>
@@ -130,9 +141,11 @@
             <p class="date-time-wrap__info-date">09 Feb</p>
             <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
             <div class="info-container">
-              <p class="date-time-wrap__info-temperature border">
+              <p class="date-time-wrap__info-temperature">
                 min<span>-2</span>
               </p>
+              
+              <div class="border"></div>  
               <p class="date-time-wrap__info-temperature">
                 max<span>+3</span>
               </p>
@@ -145,9 +158,11 @@
             <p class="date-time-wrap__info-date">09 Feb</p>
             <img class="date-time-wrap__info-img" src="./images/icons/iconWeather.png" alt="show weather" />
             <div class="info-container">
-              <p class="date-time-wrap__info-temperature border">
+              <p class="date-time-wrap__info-temperature">
                 min<span>-2</span>
               </p>
+              
+              <div class="border"></div>  
               <p class="date-time-wrap__info-temperature">
                 max<span>+3</span>
               </p>
@@ -159,12 +174,12 @@
       </div>
       <div class="date-time-arrow">
         <img class="date-time-arrow-left"
-          src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
+          src="./images/icons/chevron-left/chevron_right-24px.svg" alt="arrow" />
         <img class="date-time-arrow-right"
-          src="./images/icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png" alt="" />
+          src="./images/icons/chevron-left/chevron_right-24px.svg" alt="arrow" />
       </div>
     </div>
-    <div class="three-hour">
+    <div class="three-hour hidden">
       <div class="three-hour-weather">
         <!-- <div class="three-hour-weather__more-info">
           <p class="more-info__time">00:00</p>
@@ -298,13 +313,13 @@
 
   <!-- DIAGRAM BLOCK -->
 
-  <section class="diagram">
+  <section class="diagram hidden">
     <div class="button-holder button-holder--show">
-      <label class="diagram__label">Show Chart</label>
-      <button class="diagram__button--show-chart"></button>
+      <label class="diagram__label hidden">Show Chart</label>
+      <button class="diagram__button--show-chart hidden"></button>
     </div>
 
-    <div class="diagram__wrap">
+    <div class="diagram__wrap hidden">
       <div class="button-holder button-holder--hide">
         <label class="diagram__label">Hide Chart</label>
         <button class="diagram__button--hide-chart"></button>
