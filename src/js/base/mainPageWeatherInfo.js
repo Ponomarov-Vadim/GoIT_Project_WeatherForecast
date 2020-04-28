@@ -7,10 +7,12 @@ const mainPageMinTemp = document.querySelector('.min-temperature__value');
 const mainPageTemp = document.querySelector('.main-city-weather__temperature');
 const mainPageCity = document.querySelector('.main-city-weather__city-name');
 const fiveDaysTitle = document.querySelector('.five-days-title');
+const mainButtonsTitle = document.querySelector('.main-buttons-title');
 
 export default function mainPageWeatherInfo(parseData) {
   mainPageCity.textContent = `${parseData.city.name}, ${parseData.city.country}`;
   fiveDaysTitle.textContent = `${parseData.city.name}, ${parseData.city.country}`;
+  mainButtonsTitle.textContent = `${parseData.city.name}, ${parseData.city.country}`;
   mainPageTemp.textContent = Math.floor(
     parseData.list[0].forecast[0].main.temp,
   );
