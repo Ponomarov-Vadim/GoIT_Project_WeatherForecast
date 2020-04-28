@@ -1,16 +1,16 @@
 import Chart from 'chart.js';
-var ctx = document.getElementById('myChart');
+var ctx = document.getElementById( 'myChart' );
 
-var newLegendClickHandler = function (e, legendItem) {
+var newLegendClickHandler = function ( e, legendItem ) {
   var index = legendItem.datasetIndex;
   let legendItemsList = [];
 
-  for (let i = 1; i < this.chart.controller.legend.legendItems.length; i++) {
-    legendItemsList.push(this.chart.getDatasetMeta(i));
+  for( let i = 1; i < this.chart.controller.legend.legendItems.length; i++ ) {
+    legendItemsList.push( this.chart.getDatasetMeta( i ) );
   }
-  if (index !== 0) {
+  if( index !== 0 ) {
     legendItemsList.forEach(
-      meta => (meta.hidden = meta.index !== index ? true : false),
+      meta => ( meta.hidden = meta.index !== index ? true : false ),
     );
 
     this.chart.update();
@@ -18,30 +18,47 @@ var newLegendClickHandler = function (e, legendItem) {
 };
 
 const getFormatDate = data => {
-  return new Date(data.date * 1000).toDateString().slice(4);
+  return new Date( data.date * 1000 ).toDateString().slice( 4 );
 };
 
 Chart.defaults.global.elements.line.fill = false;
 Chart.defaults.global.elements.line.borderWidth = 4;
 Chart.defaults.global.elements.point.radius = 4;
-Chart.plugins.register({
+Chart.plugins.register( {
   id: 'paddingBelowLegends',
-  beforeInit: function (chart, options) {
+  beforeInit: function ( chart, options ) {
     chart.legend.afterFit = function () {
       this.height = this.height + 26;
     };
   },
-});
-export default function showChart(parseData) {
-  const labels = parseData.list.map(item => getFormatDate(item));
+} );
+export default function showChart ( parseData ) {
+  const labels = parseData.list.map( item => getFormatDate( item ) );
   const datasets = {
-    temp: parseData.list.map(item => item.forecast[0].main.temp),
-    humidity: parseData.list.map(item => item.forecast[0].main.humidity),
-    windSpeed: parseData.list.map(item => item.forecast[0].wind.speed),
-    pressure: parseData.list.map(item => item.forecast[0].main.pressure),
+    temp: parseData.list.map( item =>
+      Math.round(
+        item.forecast.reduce( ( acc, el ) => ( acc += el.main.temp ), 0 ) /
+        item.forecast.length,
+      ),
+    ),
+    humidity: parseData.list.map(
+      item =>
+        item.forecast.reduce( ( acc, el ) => ( acc += el.main.humidity ), 0 ) /
+        item.forecast.length,
+    ),
+    windSpeed: parseData.list.map(
+      item =>
+        item.forecast.reduce( ( acc, el ) => ( acc += el.wind.speed ), 0 ) /
+        item.forecast.length,
+    ),
+    pressure: parseData.list.map(
+      item =>
+        item.forecast.reduce( ( acc, el ) => ( acc += el.main.pressure ), 0 ) /
+        item.forecast.length,
+    ),
   };
 
-  var myChart = new Chart(ctx, {
+  var myChart = new Chart( ctx, {
     type: 'line',
     smooth: false,
     data: {
@@ -147,5 +164,5 @@ export default function showChart(parseData) {
         ],
       },
     },
-  });
+  } );
 }
