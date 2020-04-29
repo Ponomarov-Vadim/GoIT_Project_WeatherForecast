@@ -1,5 +1,8 @@
 html {
   box-sizing: border-box;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.05) 100%),
+    url(../images/background/mobile_background.png);
+  background-size: cover;
 }
 
 *,
@@ -11,20 +14,16 @@ html {
 body {
   margin: 0 auto;
   min-width: 360px;
-  height: 100vh;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.05) 100%),
-    url(../images/background/mobile_background.png);
-  background-size: cover;
 }
 
 @media screen and (min-width: 769px) {
-  body {
+  html {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.05) 100%),
       url(../images/background/tablet_background.png);
   }
 }
 @media screen and (min-width: 1096px) {
-  body {
+  html {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.05) 100%), url(../images/background/desktop_background.png);
   }
 }
