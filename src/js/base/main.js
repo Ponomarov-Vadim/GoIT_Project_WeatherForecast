@@ -4,6 +4,9 @@ import mainPageWeatherInfo from '../base/mainPageWeatherInfo';
 import getFiveDateWeather from '../base/five_days_weather';
 import getWeather from '../base/three_hours_weather';
 
+import PNotify from '../../../node_modules/pnotify/dist/es/PNotify';
+import '../../../node_modules/pnotify/dist/PNotifyBrightTheme.css';
+
 const appid = 'e8208d2596ef2ec6abe477b7469a394e';
 import showChart from './diagram';
 
@@ -22,15 +25,18 @@ export default function pullRequest(city, lat = undefined, lon = undefined) {
   const parametrSearch =
     lat === undefined ? `&q=${city}` : `&lat=${lat}&lon=${lon}`;
   const requestString = `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en${parametrSearch}`;
-  axios.get(requestString).then(response => {
-    const parseData = responseParser(response);
-    console.log(parseData);
+  axios
+    .get(requestString)
+    .then(response => {
+      const parseData = responseParser(response);
+      console.log(parseData);
 
-    mainPageWeatherInfo(parseData);
-    getFiveDateWeather(parseData);
-    getWeather();
-    showChart(parseData);
-  });
+      mainPageWeatherInfo(parseData);
+      getFiveDateWeather(parseData);
+      getWeather(parseData);
+      showChart(parseData);
+    })
+    .catch(() => pnotifyInfo());
 }
 
 function whatIsCity(e) {
@@ -48,3 +54,11 @@ function whatIsCity(e) {
 findFromFavorite.addEventListener('click', whatIsCity);
 
 pullRequest('London');
+
+function pnotifyInfo() {
+  PNotify.info({
+    title: 'Упс',
+    text: 'Ваш город не найден.',
+    delay: 2500,
+  });
+}

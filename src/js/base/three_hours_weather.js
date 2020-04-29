@@ -1,76 +1,37 @@
-import firstDay from '../base/three hours weather/first_day';
-import secondDay from '../base/three hours weather/second_day';
-import thirdDay from '../base/three hours weather/third_day';
-import fourthDay from '../base/three hours weather/fourth_day';
-import fiveDay from '../base/three hours weather/five_day';
-import { responseParser } from '../base/responseParser';
-import axios from 'axios';
+import getThreeHoursWeather from './weatherOnTheDay';
 
+document
+  .querySelector(`.date-time-container`)
+  .addEventListener('click', createThreeHoursWeatherBlock);
 
+function findTheParent(child) {
+  return (parent =
+    child.classList[0] !== 'date-time-wrap'
+      ? findTheParent(child.parentNode)
+      : child);
+}
 
-export default function getWeather () {
-    // First day
-    document.querySelector( `.date-time-container` ).childNodes[0].addEventListener( `click`, ( event => {
-        const city = document.querySelector( `.main-city-weather__city-name` ).innerHTML;
-        const appid = 'e8208d2596ef2ec6abe477b7469a394e';
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en&q=${city}`,
-            )
-            .then( response => {
-                const parseData = responseParser( response );
-                firstDay( parseData );
-            } );
-    } ) )
+function getDayMonth(date) {
+  const dayMonth = new Date(date * 1000);
+  const monthDay = dayMonth.getUTCDate();
+  return monthDay;
+}
 
-    // Second day
+let parseData;
+function createThreeHoursWeatherBlock(e) {
+  if (e.currentTarget !== e.target) {
+    const parent = findTheParent(e.target);
+    const day = Number.parseInt(
+      parent.querySelector('.date-time-wrap__info-date').textContent,
+    );
+    const dayInMonth = parseData.list.filter(
+      el => getDayMonth(el.date) === day,
+    );
+    getThreeHoursWeather(dayInMonth[0]);
+  }
+}
 
-    document.querySelector( `.date-time-container` ).childNodes[1].addEventListener( `click`, event => {
-        const city = document.querySelector( `.main-city-weather__city-name` ).innerHTML;
-        const appid = 'e8208d2596ef2ec6abe477b7469a394e';
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en&q=${city}`,
-            )
-            .then( response => {
-                const parseData = responseParser( response );
-                secondDay( parseData );
-            } );
-    } );
-    document.querySelector( `.date-time-container` ).childNodes[2].addEventListener( `click`, ( event => {
-        const city = document.querySelector( `.main-city-weather__city-name` ).innerHTML;
-        const appid = 'e8208d2596ef2ec6abe477b7469a394e';
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en&q=${city}`,
-            )
-            .then( response => {
-                const parseData = responseParser( response );
-                thirdDay( parseData );
-            } );
-    } ) );
-    document.querySelector( `.date-time-container` ).childNodes[3].addEventListener( `click`, ( event => {
-        const city = document.querySelector( `.main-city-weather__city-name` ).innerHTML;
-        const appid = 'e8208d2596ef2ec6abe477b7469a394e';
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en&q=${city}`,
-            )
-            .then( response => {
-                const parseData = responseParser( response );
-                fourthDay( parseData );
-            } );
-    } ) );
-    document.querySelector( `.date-time-container` ).childNodes[4].addEventListener( `click`, ( event => {
-        const city = document.querySelector( `.main-city-weather__city-name` ).innerHTML;
-        const appid = 'e8208d2596ef2ec6abe477b7469a394e';
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en&q=${city}`,
-            )
-            .then( response => {
-                const parseData = responseParser( response );
-                fiveDay( parseData );
-            } );
-    } ) );
+export default function getWeather(parseDataFromRequest) {
+  document.querySelector(`.three-hour-weather`).innerHTML = '';
+  parseData = parseDataFromRequest;
 }

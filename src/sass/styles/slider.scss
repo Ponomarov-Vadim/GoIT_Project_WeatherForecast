@@ -1,0 +1,36 @@
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+
+/* Стрелки */
+.link-wrap .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 0;
+  margin-top: -8px;
+  border: none;
+  outline: none;
+  width: 27px;
+  height: 27px;
+  background: url('../images/chevron_1.png') 0 0 no-repeat;
+}
+/* Стрелка влево */
+.link-wrap .slick-arrow.slick-prev {
+  left: 0px;
+  transform: rotate(180deg);
+}
+/* Стрелка вправо */
+.link-wrap .slick-arrow.slick-next {
+  right: 0px;
+}
+/* Стрелка не активная */
+.link-wrap .slick-arrow.slick-disabled {
+  opacity: 0;
+  transition: all linear 0.3s;
+}

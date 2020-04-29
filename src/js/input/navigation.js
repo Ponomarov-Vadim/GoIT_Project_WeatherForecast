@@ -1,8 +1,5 @@
 import pullRequest from '../base/main';
 
-// import PNotify from '../../../node_modules/pnotify/dist/es/PNotify';
-// import '../../../node_modules/pnotify/dist/PNotifyBrightTheme.css';
-
 function getCurrentPosition(e) {
   const options = {
     timeout: 10000,
@@ -18,21 +15,21 @@ function getCoords(e) {
       const lat = location.coords.latitude.toFixed(4);
       const lon = location.coords.longitude.toFixed(4);
       pullRequest('', lat, lon);
+      setTimeout(() => {
+        const inputSearchCity = document.querySelector(
+          '.search-wrap__form-input',
+        );
+        const cityName = document.querySelector(
+          `.main-city-weather__city-name`,
+        );
+        console.dir(inputSearchCity);
+        inputSearchCity.value = cityName.textContent;
+      }, 400);
     })
     .catch(error => {
       console.log(error);
-    // pnotifyError()
-  });
+    });
 }
 
 const btnLocation = document.querySelector('#location');
 btnLocation.addEventListener('click', getCoords);
-
-
-// function pnotifyError() {
-//   PNotify.info({
-//     title: '',
-//     text: 'Ваш город не найден. Попробуйте другое название.',
-//     delay: 2000,
-//   });
-// }
