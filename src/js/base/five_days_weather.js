@@ -30,14 +30,14 @@ export default function getFivaDaysWeather(parseData) {
   const markup = arr.reduce(
     (acc, el, index) =>
       acc +
-      `<div class="date-time-wrap">${five_days_weather({
+      five_days_weather({
         el,
         weekDay: weekDay[index],
         monthDay: monthDay[index],
         icon: icon[index],
         maxTemp: maxTemp[index],
         minTemp: minTemp[index],
-      })}</div>`,
+      }),
     ``,
   );
   fiveDaysWeather.insertAdjacentHTML(`beforeend`, markup);
