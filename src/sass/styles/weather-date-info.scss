@@ -40,7 +40,15 @@
       }
     }
     &-wrap {
-      margin: 20px 0;
+      &:hover {
+        border-radius: 15px;
+        background-color: rgba(255, 255, 255, .3);
+        transition: all 0.5s ease-out;
+      }
+      margin-top: 12px;
+      padding-top: 8px;
+      padding-bottom: 16px;
+      width: 140px;
       text-align: center;
       min-width: 106px;
       &__title {
@@ -69,6 +77,14 @@
         margin-bottom: 15px;
       }
       &__info-temperature {
+        &:first-child {
+          border: 1px;
+          border-right-style: solid;
+          padding-right: 8px;
+        }
+        &:last-child {
+          padding-left: 4px;
+        }
         color: #ffffff;
         font-family: Lato;
         font-size: 12px;
@@ -105,6 +121,7 @@
     display: none;
   }
   .info-container {
+    margin-left: 15px;
     max-width: 70px;
   }
 
@@ -120,6 +137,11 @@
         overflow-x: inherit;
       }
       &-wrap {
+        &:hover {
+          border-radius: 15px;
+          background-color: rgba(255, 255, 255, .3);
+          transition: all 0.5s ease-out;
+        }
         &__title {
           font-size: 14px;
           letter-spacing: 0.42px;
@@ -139,6 +161,13 @@
     }
   }
   .date-time-wrap__info-temperature  {
+    &:first-child {
+      border: 1px;
+      border-right-style: solid;
+    }
+    &:last-child {
+      padding-left: 10px;
+    }
     padding-right: 10px;
     font-size: 18px;
     letter-spacing: 0.54px;
