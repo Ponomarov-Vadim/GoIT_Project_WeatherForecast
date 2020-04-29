@@ -22,11 +22,13 @@
 }
 /* Стрелка влево */
 .link-wrap .slick-arrow.slick-prev {
+  cursor: pointer;
   left: 0px;
   transform: rotate(180deg);
 }
 /* Стрелка вправо */
 .link-wrap .slick-arrow.slick-next {
+  cursor: pointer;
   right: 0px;
 }
 /* Стрелка не активная */

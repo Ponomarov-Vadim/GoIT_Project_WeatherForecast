@@ -1,5 +1,6 @@
 .search-wrap {
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
+  padding-top: 30px;
   &__form {
     display: flex;
     margin: 0 auto;
@@ -47,6 +48,7 @@
   margin: 0 auto;
   display: flex;
   &__text {
+    outline: none;
     display: flex;
     justify-content: space-between;
     min-width: 50px;
