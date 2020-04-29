@@ -14,6 +14,7 @@ function getDayMonth(date) {
 }
 
 export default function getWeather(parseData) {
+  document.querySelector(`.three-hour-weather`).innerHTML = '';
   document
     .querySelector(`.date-time-container`)
     .addEventListener('click', e => {

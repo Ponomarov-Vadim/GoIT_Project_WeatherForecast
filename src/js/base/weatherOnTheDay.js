@@ -23,7 +23,8 @@ export default function getThreeHoursWeather(dayInMonth) {
     (acc, el, index) =>
       acc +
       `<div class="three-hour-weather__more-info">${three_hours_weather({
-        el,
+        el: el,
+        temp: Math.floor(el.main.temp),
         time: t[index],
       })}</div>`,
     '',
