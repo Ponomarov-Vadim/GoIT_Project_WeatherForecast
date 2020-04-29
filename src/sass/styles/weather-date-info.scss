@@ -41,10 +41,10 @@
     }
     &-wrap {
       &:hover {
-        border-radius: 15px;
         background-color: rgba(255, 255, 255, .3);
         transition: all 0.5s ease-out;
       }
+      border-radius: 15px;
       margin-top: 12px;
       padding-top: 8px;
       padding-bottom: 16px;
@@ -162,11 +162,13 @@
   }
   .date-time-wrap__info-temperature  {
     &:first-child {
+      padding: 0;
       border: 1px;
       border-right-style: solid;
     }
     &:last-child {
-      padding-left: 10px;
+      padding-right: 0;
+      padding-left: 0;
     }
     padding-right: 10px;
     font-size: 18px;
@@ -175,6 +177,7 @@
 }
 @media screen and (min-width: 1096px) {
   .info-container {
+    margin: 0 auto;
     max-width: 100px;
   }
   .border {
@@ -186,6 +189,7 @@
     }
     &-time {
       &-wrap {
+        width: 140px;
         &__title {
           font-size: 18px;
           letter-spacing: 0.54px;
@@ -195,6 +199,7 @@
           letter-spacing: 0.75px;
         }
         &__info-temperature {
+          margin: 0;
           font-size: 18px;
           letter-spacing: 0.54px;
         }
