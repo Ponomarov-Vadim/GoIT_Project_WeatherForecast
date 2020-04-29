@@ -1,6 +1,7 @@
 <p class="more-info__time">{{this.time}}</p>
-<img class="more-info__cloud-img" src="" alt="cloud" width="42" height="22" />
-<p class="more-info__value">-2<span>&deg</span></p>
+<img class="more-info__cloud-img" src="http://openweathermap.org/img/wn/{{this.icon}}@2x.png" alt="show weather"
+    width="42" height="42" />
+<p class="more-info__value">{{this.temp}}<span>&deg</span></p>
 <div class="more-info__box-value">
     <div class="more-info__box-value-img">
         <img src="" alt="pressure" width="22" height="20" />
@@ -8,8 +9,8 @@
         <img src="" alt="wind" width="24" height="20" />
     </div>
     <div class="more-info__box-value-text">
-        <span>723 mm</span>
-        <span>54%</span>
-        <span>3.7 ms</span>
+        <span>{{this.el.main.pressure}} mm</span>
+        <span>{{this.el.main.humidity}}%</span>
+        <span>{{this.el.wind.speed}} ms</span>
     </div>
 </div>
