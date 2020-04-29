@@ -1,5 +1,4 @@
 @import 'base.scss';
-@import './styles/weather-date-info.scss';
 
 @import "./helpers/placeholder.scss";
 
@@ -7,6 +6,8 @@
 @import "./styles/main_date.scss";
 @import "./styles/search.scss";
 @import "./styles/slider.scss";
-@import "./styles/fivedays.scss";
 @import "./styles/three-hour-weather__more-info.scss";
 @import "./styles/diagram.scss";
+@import "./styles/btn.scss";
+@import './styles/weather-date-info.scss';
+@import "./styles/fivedays.scss";
