@@ -150,11 +150,17 @@ function showHideCard(e) {
   const valueScroll = blockWidth / blockLength;
 
   if (e.target == refsArrow.right) {
-    refsBlock.todayTimeContainer.scrollLeft += valueScroll;
+    refsBlock.todayTimeContainer.scroll({
+      left: refsBlock.todayTimeContainer.scrollLeft + valueScroll,
+      behavior: 'smooth',
+    });
   }
 
   if (e.target == refsArrow.left) {
-    refsBlock.todayTimeContainer.scrollLeft -= valueScroll;
+    refsBlock.todayTimeContainer.scroll({
+      left: refsBlock.todayTimeContainer.scrollLeft - valueScroll,
+      behavior: 'smooth',
+    });
   }
 }
 

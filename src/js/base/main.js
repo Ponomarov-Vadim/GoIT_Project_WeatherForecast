@@ -28,7 +28,7 @@ export default function pullRequest(city, lat = undefined, lon = undefined) {
 
     mainPageWeatherInfo(parseData);
     getFiveDateWeather(parseData);
-    getWeather();
+    getWeather(parseData);
     showChart(parseData);
   });
 }
