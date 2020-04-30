@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 60px;
 }
 
 .main-date-wrap {
@@ -13,7 +12,7 @@
     min-width: 320px;
     box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
     border-radius: 35px;
-    background-color: rgba(16, 33, 54, .6);
+    background-color: rgba(16, 33, 54, 0.6);
     color: #ffffff;
     font-family: Lato;
     font-size: 16px;
@@ -125,7 +124,7 @@
     }
     .quote-wrap {
         width: 610px;
-        &__text{
+        &__text {
             width: 380px;
             font-size: 22px;
         }
@@ -169,4 +168,4 @@
         width: 376px;
         padding-right: 60px;
     }
-} 
+}

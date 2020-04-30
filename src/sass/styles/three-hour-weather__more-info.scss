@@ -5,7 +5,7 @@
     margin: 0 13px;
     overflow-x: scroll;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
     &::-webkit-scrollbar {
       background-color: rgba($color: #fff, $alpha: 0.2);
@@ -24,7 +24,7 @@
           color: #ff6b08;
         }
         cursor: pointer;
-        background-color: rgba(255, 255, 255, .2);
+        background-color: rgba(255, 255, 255, 0.2);
         transition: all 0.5s ease-out;
       }
       min-width: 132px;
@@ -33,7 +33,7 @@
       text-align: center;
       margin-right: 15px;
       color: rgba($color: #fff, $alpha: 0.54);
-      font-family: 'Lato';
+      font-family: "Lato";
       font-size: 12px;
       font-weight: 400;
       line-height: 22px;
