@@ -4,6 +4,9 @@ import mainPageWeatherInfo from '../base/mainPageWeatherInfo';
 import getFiveDateWeather from '../base/five_days_weather';
 import getWeather from '../base/three_hours_weather';
 
+import PNotify from '../../../node_modules/pnotify/dist/es/PNotify';
+import '../../../node_modules/pnotify/dist/PNotifyBrightTheme.css';
+
 const BASE_URL = ' https://pixabay.com/api/';
 const KEY = '15725306-bc876a9032cf9c2bacf7059da';
 
@@ -25,15 +28,18 @@ export default function pullRequest(city, lat = undefined, lon = undefined) {
   const parametrSearch =
     lat === undefined ? `&q=${city}` : `&lat=${lat}&lon=${lon}`;
   const requestString = `https://api.openweathermap.org/data/2.5/forecast?APPID=${appid}&units=metric&lang=en${parametrSearch}`;
-  axios.get(requestString).then(response => {
-    const parseData = responseParser(response);
-    console.log(parseData);
-    backgroudImage(parseData.city.name);
-    mainPageWeatherInfo(parseData);
-    getFiveDateWeather(parseData);
-    getWeather(parseData);
-    showChart(parseData);
-  });
+  axios
+    .get(requestString)
+    .then(response => {
+      const parseData = responseParser(response);
+      console.log(parseData);
+      backgroudImage(parseData.city.name);
+      mainPageWeatherInfo(parseData);
+      getFiveDateWeather(parseData);
+      getWeather(parseData);
+      showChart(parseData);
+    })
+    .catch(() => pnotifyInfo());
 }
 
 function whatIsCity(e) {
@@ -61,4 +67,12 @@ function backgroudImage(searchWord) {
       document.body.style.backgroundImage = `url(${res.data.hits[0].largeImageURL})`;
     })
     .catch(e => backgroudImage('future+city+sky'));
+}
+
+function pnotifyInfo() {
+  PNotify.info({
+    title: 'Упс',
+    text: 'Ваш город не найден.',
+    delay: 2500,
+  });
 }

@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
   <title>Weather Forecast</title>
 </head>
 
 
 <body>
   <!-- PAGE INPUT -->
-
   <div class="search-wrap">
     <form class="search-wrap__form" action="">
       <div id="location">
@@ -21,7 +19,7 @@
       </div>
       <input class="search-wrap__form-input" type="text" placeholder="Enter the city" />
       <div id="star" class="search-wrap__star-img">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24">
+        <svg class="svg-star" xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24">
           <path
             d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" />
           <path d="M0 0h24v24H0z" fill="none" />
@@ -94,7 +92,6 @@
     </div>
     <div class="three-hour hidden">
       <div class="three-hour-weather">
-        
       </div>
     </div>
   </div>
@@ -118,6 +115,9 @@
       </div>
     </div>
   </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
