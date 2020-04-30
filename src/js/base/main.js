@@ -4,6 +4,9 @@ import mainPageWeatherInfo from '../base/mainPageWeatherInfo';
 import getFiveDateWeather from '../base/five_days_weather';
 import getWeather from '../base/three_hours_weather';
 
+const BASE_URL = ' https://pixabay.com/api/';
+const KEY = '15725306-bc876a9032cf9c2bacf7059da';
+
 const appid = 'e8208d2596ef2ec6abe477b7469a394e';
 import showChart from './diagram';
 
@@ -25,7 +28,7 @@ export default function pullRequest(city, lat = undefined, lon = undefined) {
   axios.get(requestString).then(response => {
     const parseData = responseParser(response);
     console.log(parseData);
-
+    backgroudImage(parseData.city.name);
     mainPageWeatherInfo(parseData);
     getFiveDateWeather(parseData);
     getWeather(parseData);
@@ -48,3 +51,14 @@ function whatIsCity(e) {
 findFromFavorite.addEventListener('click', whatIsCity);
 
 pullRequest('London');
+
+function backgroudImage(searchWord) {
+  axios
+    .get(
+      `${BASE_URL}?key=${KEY}&q=${searchWord}&category='places'&safesearch=true&`,
+    )
+    .then(res => {
+      document.body.style.backgroundImage = `url(${res.data.hits[0].largeImageURL})`;
+    })
+    .catch(e => backgroudImage('future+city+sky'));
+}
