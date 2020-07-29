@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+  <title>Weather Forecast</title>
+</head>
+
+
+<body>
+  <!-- PAGE INPUT -->
+
+  <div class="search-wrap">
+    <form class="search-wrap__form" action="">
+      <div id="location">
+        <img class="search-wrap__geo-img" src="./images/icons/location/location_searching-24px.svg" alt="" />
+      </div>
+      <input class="search-wrap__form-input" type="text" placeholder="Enter the city" />
+      <div id="star" class="search-wrap__star-img">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24">
+          <path
+            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" />
+          <path d="M0 0h24v24H0z" fill="none" />
+        </svg>
+      </div>
+    </form>
+    <div class="link-wrap"></div>
+  </div>
+  <!-- PAGE MAIN INFORMATION -->
+
+  <div class="main-information-wrap">
+    <div class="main-city-weather">
+      <img class="main-city-weather__img" src="./images/cloud.png" alt="cloud" />
+      <p class="main-city-weather__city-name">Kyiv, UA</p>
+      <div class="temperature-difference">
+        <p class="main-city-weather__temperature">-3</p>
+        <span class="main-degree-icon">&#176</span>
+        <div class="temperature-difference-wrap">
+          <div class="min-temperature">
+            <p class="min-temperature__title">min</p>
+            <p class="min-temperature__value">-5&#176</p>
+          </div>
+          <div class="max-temperature">
+            <p class="max-temperature__title">max</p>
+            <p class="max-temperature__value">-2&#176</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-buttons">
+      <h2 class="main-buttons-title hidden">Kyiv, UA</h2>
+      <div class="main-buttons-container">
+        <button class="main-buttons__button-today">today</button>
+        <button class="main-buttons__button-five-days">5 days</button>
+      </div>
+    </div>
+  </div>
+  <div class="date-quote-wrap">
+    <div class="main-date-wrap">
+      <h3 class="main-date-wrap__title" data-action="load-main-date"></h3>
+      <div class="main-date-wrap__info">
+        <p class="main-date-wrap__info-month" data-action="load-month"></p>
+        <p class="main-date-wrap__info-time" data-action="load-info-time">00:00:00</p>
+      </div>
+      <div class="main-date-wrap__sun">
+        <img src="./images/sunrise.png" alt="">
+        <p class="main-date-wrap__sun-sunrise">6:30</p>
+        <img src="./images/sunset.png" alt="">
+        <p class="main-date-wrap__sun-sunset">19:28</p>
+      </div>
+    </div>
+    <div class="quote-wrap">
+    </div>
+  </div>
+
+  <!-- FIVE DAYS WEATHER BLOCK -->
+
+  <div class="five-days-info hidden">
+
+    <h2 class="five-days-title hidden">Kyiv, UA</h2>
+    <div class="date-container hidden">
+      <div class="date-time-container">
+      </div>
+      <div class="quote-wrap">
+      </div>
+      <div class="date-time-arrow">
+        <img class="date-time-arrow-left" src="./images/icons/chevron-left/chevron_right-24px.svg" alt="arrow" />
+        <img class="date-time-arrow-right" src="./images/icons/chevron-left/chevron_right-24px.svg" alt="arrow" />
+      </div>
+    </div>
+    <div class="three-hour hidden">
+      <div class="three-hour-weather">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGRAM BLOCK -->
+
+  <section class="diagram hidden">
+    <div class="button-holder button-holder--show">
+      <label class="diagram__label hidden">Show Chart</label>
+      <button class="diagram__button--show-chart hidden"></button>
+    </div>
+
+    <div class="diagram__wrap hidden">
+      <div class="button-holder button-holder--hide">
+        <label class="diagram__label">Hide Chart</label>
+        <button class="diagram__button--hide-chart"></button>
+      </div>
+
+      <div class="diagram__block">
+        <canvas id="myChart" class="diagram__chart"></canvas>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

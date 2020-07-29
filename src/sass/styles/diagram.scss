@@ -1,0 +1,96 @@
+.diagram {
+    &__wrap {
+        margin: 0 auto;
+        box-shadow: 0 8px 43px rgba(16, 33, 54, 0.59);
+        border-radius: 35px;
+        background-color: #102136;
+        opacity: 0.8;
+    }
+
+    &__block {
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    &__chart {
+        height: 400px;
+        width: 800px;
+    }
+
+    &__button--show-chart {
+        transform: rotate(90deg);
+        @extend %chart-button-arrow;
+    }
+
+    &__button--hide-chart {
+        transform: rotate(-90deg);
+        @extend %chart-button-arrow;
+    }
+
+    &__label {
+        font-size: 15px;
+        font-family: "Lato";
+        color: rgb(255, 107, 8);
+        text-align: center;
+        vertical-align: super;
+    }
+
+    .button-holder {
+        display: block;
+        margin: 0 auto;
+        width: 110px;
+
+        button {
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(241, 241, 241, .2);
+            // opacity: 0.2;
+            width: 27px;
+            height: 27px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .diagram {
+        &__wrap {
+            padding: 24px 16px 28px;
+            max-width: 320px;
+        }
+
+        .button-holder--show {
+            padding: 16px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .diagram {
+        &__wrap {
+            padding: 28px 30px 40px;
+            max-width: 620px;
+        }
+
+        .button-holder--show {
+            padding: 30px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1096px) {
+    .diagram {
+        &__block {
+            padding-bottom: 0;
+        }
+
+        &__wrap {
+            padding: 22px 90px 50px 90px;
+            max-width: 1060px;
+        }
+
+        .button-holder--show {
+            padding: 24px 0;
+        }
+    }
+}
