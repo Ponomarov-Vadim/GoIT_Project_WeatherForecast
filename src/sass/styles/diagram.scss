@@ -44,7 +44,6 @@
             border: none;
             border-radius: 50%;
             background-color: rgba(241, 241, 241, .2);
-            // opacity: 0.2;
             width: 27px;
             height: 27px;
             cursor: pointer;
@@ -80,6 +79,7 @@
 
 @media screen and (min-width: 1096px) {
     .diagram {
+        margin-bottom: 0;
         &__block {
             padding-bottom: 0;
         }

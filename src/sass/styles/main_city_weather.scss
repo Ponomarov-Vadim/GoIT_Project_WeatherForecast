@@ -15,16 +15,13 @@
   font-family: Lato;
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
-
   &__img {
-    padding-top: 38px;
+    margin-top: 38px;
   }
 
   &__city-name {
     font-size: 16px;
-    margin: 0;
-    padding-top: 22px;
+    margin: 22px 0 0 0;
     opacity: 0.3;
   }
 
@@ -149,15 +146,15 @@ h2 {
   }
   .main-degree-icon {
     font-size: 38px;
-    margin-bottom: -16px;
+    margin-bottom: 38px;
   }
 
   .temperature-difference-wrap {
     font-size: 18px;
     display: flex;
     justify-content: center;
-    padding-top: 34px;
-    padding-bottom: 36px;
+    margin-top: 34px;
+    margin-bottom: 36px;
     width: 100%;
   }
 
@@ -181,6 +178,10 @@ h2 {
     margin-right: 150px;
   }
   .main-city-weather {
+    &__temperature{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     margin-right: 0;
   }
 
